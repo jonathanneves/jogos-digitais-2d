@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<chapter_1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<mappingUI> 
+		<titleLanguage>Fix_it_bot</titleLanguage>
+		<buttonPlay>Jogar</buttonPlay>
+		<buttonCredits>Créditos</buttonCredits>
+		<buttonExit>Sair</buttonExit>
+		<inputRight>direita</inputRight>
+		<inputLeft>esquerda</inputLeft>
+		<inputUp>cima</inputUp>
+		<inputDown>baixo</inputDown>
+	</mappingUI> 
+	<page number = "1">
+		<dialogue>Bem vindo! Obrigado por adquirir nosso robô de consertos automatizados. Este é o {#nome}!</dialogue>
+	</page>
+
+	<page number = "2">
+		<dialogue>Este é o {b}segundo{/b} teste.</dialogue>
+	</page>
+
+	<page number = "3">
+		<dialogue>Este é um teceiro teste.</dialogue>
+	</page>
+
+	<page number = "4">
+		<dialogue>Este é o quarto teste.</dialogue>
+	</page>
+
+	<page number = "5">
+		<dialogue>Este é o quinto teste.</dialogue>
+	</page>
+
+	<page number = "6">
+		<dialogue>Este é o sexto TESTE!</dialogue>
+	</page> 
+</chapter_1>

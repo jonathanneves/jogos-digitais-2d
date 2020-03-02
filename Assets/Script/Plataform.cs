@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Plataform : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int totalConnected;
+    private int currentConnected;
+    public string quiz;
+    public bool answer;
+
+ 
     void Start()
     {
-        
+        totalConnected = GameObject.FindGameObjectsWithTag("Plataform").Length;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnTriggerEnter2D(Collider2D col) {
+        Debug.Log("Computador conectado");
+        currentConnected++;
+        if(currentConnected == totalConnected){
+            Debug.Log("Completou");
+        }
     }
 }

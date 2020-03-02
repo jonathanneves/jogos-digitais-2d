@@ -12,7 +12,7 @@ public class Constants : MonoBehaviour
     [HideInInspector] public string inputRight = "direita";
     [HideInInspector] public string inputUp = "cima";
     [HideInInspector] public string inputDown = "baixo";
-    public Text titleText;
+    private Text titleText;
     public Text playText;
     public Text creditsText;
     public Text exitText;

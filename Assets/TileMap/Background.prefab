@@ -41,6 +41,33 @@ Tilemap:
   m_GameObject: {fileID: 108594510663607543}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: 2, y: -5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 32
+      m_TileSpriteIndex: 31
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 2, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 30
+      m_TileSpriteIndex: 29
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 3, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 31
+      m_TileSpriteIndex: 30
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -1, y: -3, z: 0}
     second:
       serializedVersion: 2
@@ -59,6 +86,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: 1, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 29
+      m_TileSpriteIndex: 28
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: 2, y: -3, z: 0}
     second:
       serializedVersion: 2
@@ -73,6 +109,15 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 21
       m_TileSpriteIndex: 27
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 4, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 28
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -360,6 +405,16 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: be010fedc6e529b40ad2819b1af72c4c, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 35a151d5c67062d418e53872fd3c1571, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: ebba3a1ee55c0b44e8cd722a8679d7b9, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 7d811b993d589a548b06b3f8a4e5eea6, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 25c6bd44c313064429f104c9d8a411dc, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: a9103b9a36489b6419eb4257d8afecef, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 20a9112e45b46a04484ced87c85df556, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: -4710041958616377809, guid: 8e23267775db47046a2d61437d3de12d,
@@ -407,8 +462,9 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1677751220216159446, guid: 8e23267775db47046a2d61437d3de12d,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 4564712445686568587, guid: 8e23267775db47046a2d61437d3de12d,
+      type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 2768870790284389518, guid: 8e23267775db47046a2d61437d3de12d,
       type: 3}
@@ -442,8 +498,20 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 8381747946050516796, guid: 8e23267775db47046a2d61437d3de12d,
       type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 2112566055263409019, guid: 8e23267775db47046a2d61437d3de12d,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -8579593088187862807, guid: 8e23267775db47046a2d61437d3de12d,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -1746537050869249881, guid: 8e23267775db47046a2d61437d3de12d,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -7660256860298491987, guid: 8e23267775db47046a2d61437d3de12d,
+      type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 29
+  - m_RefCount: 34
     m_Data:
       e00: 1
       e01: 0
@@ -462,7 +530,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 29
+  - m_RefCount: 34
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 4.4137726, g: 4.4137726, b: 4.4137726, a: 4.4137726}

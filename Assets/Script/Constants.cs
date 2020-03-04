@@ -12,14 +12,12 @@ public class Constants : MonoBehaviour
     [HideInInspector] public string inputRight = "direita";
     [HideInInspector] public string inputUp = "cima";
     [HideInInspector] public string inputDown = "baixo";
-    private Text titleText;
     public Text playText;
     public Text creditsText;
     public Text exitText;
 
     public void mappingUI(IEnumerable<XElement> constants) {
         foreach (var map in constants) {
-            titleText.text = map.Parent.Element("titleLanguage").Value.Trim();
             playText.text = map.Parent.Element("buttonPlay").Value.Trim();
             creditsText.text = map.Parent.Element("buttonCredits").Value.Trim();
             exitText.text = map.Parent.Element("buttonExit").Value.Trim();

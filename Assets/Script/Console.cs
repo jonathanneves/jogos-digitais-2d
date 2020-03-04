@@ -11,10 +11,14 @@ public class Console : MonoBehaviour
     [HideInInspector]
     public string[] commands;
     private InputField textInput;
-    public Button compileButton;
     private Color actualColor;
+    private bool isReseting = false;
+    public Button compileButton;
+    public GameObject newLevel;
+    private GameObject currentLevel;
 
     void Start(){
+        currentLevel = Instantiate(newLevel, newLevel.transform.position, newLevel.transform.rotation) as GameObject;
         textInput = GameObject.Find("InputField").GetComponent<InputField>();
         actualColor = textInput.GetComponent<Image>().color;
     }
@@ -29,11 +33,30 @@ public class Console : MonoBehaviour
     }
 
     public void resetUiStatus(){
+        for (int i = 0; i < commands.Length; i++) {
+            commands[i] = null;
+        }
         compileButton.enabled = true;
         textInput.GetComponent<Image>().color = actualColor;
     }
 
     public void resetLevel() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if(!isReseting){
+            StartCoroutine(StartAnimationChangeLevel());
+        }
+    }
+
+    private IEnumerator StartAnimationChangeLevel(){
+        isReseting = true;
+        compileButton.enabled = false;
+        currentLevel.GetComponent<Animator>().SetBool("MoveLeft", true);
+        yield return new WaitForSeconds(1f);
+        if(currentLevel != null){
+            Destroy(currentLevel);
+            currentLevel = Instantiate(newLevel, newLevel.transform.position, newLevel.transform.rotation) as GameObject; ;
+        }
+        yield return new WaitForSeconds(1f);
+        isReseting = false;
+        compileButton.enabled = true;
     }
 }

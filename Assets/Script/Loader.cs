@@ -17,13 +17,9 @@ public class Loader : MonoBehaviour {
     string dialogueText;
     bool finishedLoading = false;
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.Return) && finishedLoading) {
-            SceneManager.LoadScene("Level 1"); //Only happens if coroutine is finished 
-            finishedLoading = false;
-        }
+    void Start(){
+        currentLanguage("portuguese");
     }
-
     void LoadXML(string currentLanguage) {
         //Assigning Xdocument xmlDoc. Loads the xml file from the file path listed.
         if(finishedLoading)
@@ -50,7 +46,7 @@ public class Loader : MonoBehaviour {
                 //Create a new Index in the List, which will be a new XMLData object and pass the previously assigned variables as arguments so they get assigned to the new object’s variables.
                 data.Add(new XMLData(pageNum, dialogueText));
                 //To test and make sure the data has been applied to properly, print out the musicClip name from the data list’s current index. This will let us know if the objects in the list have been created successfully and if their variables have been assigned the right values.
-                //Debug.Log(data[iteration-1].dialogueText);
+                Debug.Log(data[iteration-1].dialogueText);
                 iteration++; //increment the iteration by 1
             }   
         }
@@ -63,7 +59,7 @@ public class Loader : MonoBehaviour {
         LoadXML(language); //Loads XML File. 
         StartCoroutine("AssignData"); //Starts assigning XML data to data List. 
     }
-
+    
     void resetVariables(){
         iteration = 1; pageNum = 1;
         data.Clear();

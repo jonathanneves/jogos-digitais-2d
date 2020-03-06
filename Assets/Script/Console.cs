@@ -6,21 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class Console : MonoBehaviour
 {
-    [HideInInspector]
-    public bool isCompiling = false;
-    [HideInInspector]
-    public string[] commands;
+    private Constants contants = new Constants();
+
+    [HideInInspector] public bool isCompiling = false;
+    [HideInInspector] public string[] commands;
+
     private InputField textInput;
+    private Animation consoleAnim;
+
     private Color actualColor;
     private bool isReseting = false;
-    public Button compileButton;
     public GameObject newLevel;
     private GameObject currentLevel;
 
+    public Button compileButton;
+    public Text placeholderInputField;
+
     void Start(){
+        placeholderInputField.text = contants.placeholderInput;
         currentLevel = Instantiate(newLevel, newLevel.transform.position, newLevel.transform.rotation) as GameObject;
         textInput = GameObject.Find("InputField").GetComponent<InputField>();
         actualColor = textInput.GetComponent<Image>().color;
+        consoleAnim = GameObject.Find("Console").GetComponent<Animation>();
     }
 
     public void compile() {

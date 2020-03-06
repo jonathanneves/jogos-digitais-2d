@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
 
-    public Animator animator;
+    private Animator animator;
 
     void Start() {
         animator = GameObject.Find("Transition").GetComponent<Animator>();
@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
 
     private IEnumerator LoadNewSceneAfterTransition(){
         animator.SetBool("animationOut", true);
-        yield return new WaitForSeconds(1.30f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

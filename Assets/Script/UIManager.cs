@@ -5,44 +5,37 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    private int nextDialogue = 0;
-    private Loader loadXml;
-    public TextMeshProUGUI nameDialogue;
-    public TextMeshProUGUI textDialogue;
-    bool estaDigitando = false;
+    [HideInInspector] public int nextDialogue = 0;
+    public Loader loadXml;
+    public TMP_Text textDialogue;
+    [HideInInspector] public bool estaDigitando = false;
 
     [Header("Typping Effect Coroutine")]
     //public float timeBtwChar = 0f;
     public float delayTypping = 0.05f;
 
     void Start(){
-        nameDialogue = GameObject.Find("Name").GetComponent<TMPro.TextMeshProUGUI>();
-        textDialogue = GameObject.Find("Dialogue").GetComponent<TMPro.TextMeshProUGUI>();
         loadXml = GameObject.Find("Loader").GetComponent<Loader>();
     }
   
-    void Update()
+   /*void Update()
     {
         if(Input.GetKeyDown(KeyCode.Return) && nextDialogue < loadXml.data.Count && !estaDigitando){
             StartCoroutine(typpingEffect());
             nextDialogue++;
         }
+    }*/
 
-        if(Input.GetKeyDown(KeyCode.X)){
-            nextDialogue = 0;
-            StartCoroutine(typpingEffect());
-        }
-    }
-
-    //Animação de texto sendo digitado
-    IEnumerator typpingEffect(){
+    public IEnumerator typpingEffect(string actualScene){
 
         estaDigitando = true;
+        if(nextDialogue == 0)
+            yield return new WaitForSeconds(1.25f);
 
-        nameDialogue.text = loadXml.data[nextDialogue].charText;
-        textDialogue.text = loadXml.data[nextDialogue].dialogueText;
+        string actualText = loadXml.data[nextDialogue].dialogueText;
+        textDialogue.text = actualText;
 
-        int totalVisibleCharacters = textDialogue.textInfo.characterCount;
+        int totalVisibleCharacters = actualText.Length;
         int counter = 0;
 
         while(counter <= totalVisibleCharacters){
@@ -50,6 +43,7 @@ public class UIManager : MonoBehaviour
             textDialogue.maxVisibleCharacters = visibleCount;
             counter++;
             yield return new WaitForSeconds(delayTypping);
+            Debug.Log(visibleCount + " " + counter + " " + totalVisibleCharacters);
         }
 
         estaDigitando = false;

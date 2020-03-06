@@ -7,28 +7,40 @@
 		<buttonPlay>Play</buttonPlay>
 		<buttonCredits>Credits</buttonCredits>
 		<buttonExit>Exit</buttonExit>
+		<inputRight>right</inputRight>
+		<inputLeft>left</inputLeft>
+		<inputUp>up</inputUp>
+		<inputDown>down</inputDown>
+		<placeholder>>Type a command...</placeholder>
 	</mappingUI> 
-	<page number = "1">	
-		<dialogue>This is a {color=#008000}test!{/color} </dialogue>
+	<page number = "1">
+		<dialogue>{i}Olá mundo!{/i}</dialogue>
+	</page>
+	<page number = "2">
+		<dialogue>Eu sou {b}F1-B0{/b}, um Droide criado para concertos e reparos de dispositivos eletrônicos.</dialogue>
 	</page>
 
-	<page number = "2">
-		<dialogue>This is a {b}second{/b} test.</dialogue>
-	</page>
-	
 	<page number = "3">
-		<dialogue>This is a third test.</dialogue>
+		<dialogue>Bem, para me controlar é bem simples basta usar as setas do teclado.</dialogue>
 	</page>
 
 	<page number = "4">
-		<dialogue>This is a fourth test.</dialogue>
+		<dialogue>Haha brincadeira!</dialogue>
 	</page>
 
 	<page number = "5">
-		<dialogue>This is a fifth test.</dialogue>
+		<dialogue>Eu sou um droide novo, não fui programado propriamente ainda.</dialogue>
 	</page>
 
 	<page number = "6">
-		<dialogue>This is a sixth test.</dialogue>
+		<dialogue>Você pode usar o console ao lado para me controlar. Basta digitar os comandos {b}Esquerda, Direita, Cima e Baixo{/b}</dialogue>
+	</page> 
+	
+	<page number = "7">
+		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em linhas, um em baixo do outro. Depois é só compilar.</dialogue>
+	</page> 
+	
+	<page number = "8">
+		<dialogue>Agora é sua vez, me ajude a concertar este relógio digital levando este {i}mini-processador{/i} até a plataforma de energia.</dialogue>
 	</page> 
 </chapter_1>

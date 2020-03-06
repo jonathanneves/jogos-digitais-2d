@@ -12,6 +12,7 @@ public class Constants : MonoBehaviour
     [HideInInspector] public string inputRight = "direita";
     [HideInInspector] public string inputUp = "cima";
     [HideInInspector] public string inputDown = "baixo";
+    [HideInInspector] public string placeholderInput;
     public Text playText;
     public Text creditsText;
     public Text exitText;
@@ -25,6 +26,7 @@ public class Constants : MonoBehaviour
             inputRight = map.Parent.Element("inputRight").Value.Trim();
             inputUp = map.Parent.Element("inputUp").Value.Trim();
             inputDown = map.Parent.Element("inputDown").Value.Trim();
+            placeholderInput = map.Parent.Element("placeholder").Value.Trim();
         }
     }
 }

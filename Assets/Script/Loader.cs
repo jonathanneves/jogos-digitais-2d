@@ -18,8 +18,10 @@ public class Loader : MonoBehaviour {
     bool finishedLoading = false;
 
     void Start(){
-        currentLanguage("portuguese");
+        if(this != null)
+            currentLanguage("portuguese");
     }
+
     void LoadXML(string currentLanguage) {
         //Assigning Xdocument xmlDoc. Loads the xml file from the file path listed.
         if(finishedLoading)

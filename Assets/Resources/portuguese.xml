@@ -12,6 +12,12 @@
 		<inputUp>cima</inputUp>
 		<inputDown>baixo</inputDown>
 		<placeholder>>Digite um comando...</placeholder>
+		<trueButton>Verdadeiro</trueButton>
+		<falseButton>Falso</falseButton>
+		<wrongCommands>Comandos Errados:</wrongCommands>
+		<rightCommands>Comandos Corretos:</rightCommands>
+		<finalTitleUI>Compilado Com Sucesso!</finalTitleUI>
+		<buttonNext>Próxima Fase</buttonNext>
 	</mappingUI> 
 	<page number = "1">
 		<dialogue>{i}Olá mundo!{/i}</dialogue>
@@ -33,7 +39,7 @@
 	</page>
 
 	<page number = "6">
-		<dialogue>Você pode usar o console ao lado para me controlar. Basta digitar os comandos {b}Esquerda, Direita, Cima e Baixo{/b}</dialogue>
+		<dialogue>Você pode usar o console ao lado para me controlar. Basta digitar os comandos {b}Esquerda, Direita, Cima e Baixo.{/b}</dialogue>
 	</page> 
 	
 	<page number = "7">

@@ -16,6 +16,10 @@ public class Movement : MonoBehaviour
     private bool canMove = false;
     private Animator animator;
     private Color actualColor;
+    [HideInInspector] public bool gameOver = false;
+
+    private int wrongCommands = 0;
+    private int rightCommands = 0;
 
     void Start()
     {
@@ -43,7 +47,6 @@ public class Movement : MonoBehaviour
     
     private IEnumerator startMovement(){
         int index = 0;
-        movement = new Vector2(0f, 0f);
         while (index != console.commands.Length) {
             movement = newMovement(index);     
 
@@ -63,16 +66,25 @@ public class Movement : MonoBehaviour
     private Vector2 newMovement(int index){
         currentPos = new Vector2(Mathf.Round(this.transform.position.x), Mathf.Round(this.transform.position.y));
         string currentCommand = console.commands[index].ToLower();
-        if(currentCommand == contants.inputLeft)
-             movement.x = -1f;
-        else if (currentCommand == contants.inputRight)
+        if (currentCommand == contants.inputLeft) {
+            movement.x = -1f;
+            rightCommands++;
+        }
+        else if (currentCommand == contants.inputRight) {
             movement.x = 1f;
-        else if (currentCommand == contants.inputUp)
+            rightCommands++;
+        }
+        else if (currentCommand == contants.inputUp) {
             movement.y = 1f;
-        else if (currentCommand == contants.inputDown)
+            rightCommands++;
+        }
+        else if (currentCommand == contants.inputDown) {
             movement.y = -1f;
+            rightCommands++;
+        }
         else
-            movement = new Vector2(0f, 0f);
+            wrongCommands++;
+
         movement = movement + currentPos;
         return movement;
     }
@@ -81,5 +93,6 @@ public class Movement : MonoBehaviour
         console.resetUiStatus();
         canMove = false;
         console.isCompiling = false;
+        gameOver = true;
     }
 }

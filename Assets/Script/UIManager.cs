@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public Loader loadXml;
     public TMP_Text textDialogue;
     [HideInInspector] public bool estaDigitando = false;
+    [HideInInspector] public bool endDialogue = false;
 
     [Header("Typping Effect Coroutine")]
     //public float timeBtwChar = 0f;
@@ -18,19 +19,12 @@ public class UIManager : MonoBehaviour
         loadXml = GameObject.Find("Loader").GetComponent<Loader>();
     }
   
-   /*void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Return) && nextDialogue < loadXml.data.Count && !estaDigitando){
-            StartCoroutine(typpingEffect());
-            nextDialogue++;
-        }
-    }*/
 
     public IEnumerator typpingEffect(string actualScene){
 
         estaDigitando = true;
         if(nextDialogue == 0)
-            yield return new WaitForSeconds(1.25f);
+            yield return new WaitForSeconds(1.5f);
 
         string actualText = loadXml.data[nextDialogue].dialogueText;
         textDialogue.text = actualText;
@@ -43,9 +37,11 @@ public class UIManager : MonoBehaviour
             textDialogue.maxVisibleCharacters = visibleCount;
             counter++;
             yield return new WaitForSeconds(delayTypping);
-            Debug.Log(visibleCount + " " + counter + " " + totalVisibleCharacters);
         }
-
+        nextDialogue++;
+        Debug.Log(nextDialogue);
+        if (nextDialogue == 7)
+            endDialogue = true;
         estaDigitando = false;
     }
 }

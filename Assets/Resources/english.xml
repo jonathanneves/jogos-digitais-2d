@@ -12,6 +12,8 @@
 		<inputUp>up</inputUp>
 		<inputDown>down</inputDown>
 		<placeholder>>Type a command...</placeholder>
+		<trueButton>True</trueButton>
+		<falseButton>False</falseButton>
 	</mappingUI> 
 	<page number = "1">
 		<dialogue>{i}Olá mundo!{/i}</dialogue>

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Console : MonoBehaviour
 {
-    private Constants contants = new Constants();
+    private Constants constants = new Constants();
 
     [HideInInspector] public bool isCompiling = false;
     [HideInInspector] public string[] commands;
@@ -23,7 +23,7 @@ public class Console : MonoBehaviour
     public Text placeholderInputField;
 
     void Start(){
-        placeholderInputField.text = contants.placeholderInput;
+        placeholderInputField.text = constants.placeholderInput;
         currentLevel = Instantiate(newLevel, newLevel.transform.position, newLevel.transform.rotation) as GameObject;
         textInput = GameObject.Find("InputField").GetComponent<InputField>();
         actualColor = textInput.GetComponent<Image>().color;

@@ -13,6 +13,12 @@ public class Constants : MonoBehaviour
     [HideInInspector] public string inputUp = "cima";
     [HideInInspector] public string inputDown = "baixo";
     [HideInInspector] public string placeholderInput;
+    [HideInInspector] public string falseButton;
+    [HideInInspector] public string trueButton;
+    [HideInInspector] public string wrongCommands;
+    [HideInInspector] public string rightCommands;
+    [HideInInspector] public string finalTitleUI;
+    [HideInInspector] public string buttonNext;
     public Text playText;
     public Text creditsText;
     public Text exitText;
@@ -27,6 +33,12 @@ public class Constants : MonoBehaviour
             inputUp = map.Parent.Element("inputUp").Value.Trim();
             inputDown = map.Parent.Element("inputDown").Value.Trim();
             placeholderInput = map.Parent.Element("placeholder").Value.Trim();
+            falseButton = map.Parent.Element("falseButton").Value.Trim();
+            trueButton = map.Parent.Element("trueButton").Value.Trim();
+            wrongCommands = map.Parent.Element("wrongCommands").Value.Trim();
+            rightCommands = map.Parent.Element("rightCommands").Value.Trim();
+            finalTitleUI = map.Parent.Element("finalTitleUI").Value.Trim();
+            buttonNext = map.Parent.Element("buttonNext").Value.Trim();
         }
     }
 }

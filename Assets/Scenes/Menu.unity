@@ -152,11 +152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a469addb07609e04ca602d407556e47b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputLeft: esquerda
-  inputRight: direita
-  inputUp: cima
-  inputDown: baixo
+  inputLeft: 
+  inputRight: 
+  inputUp: 
+  inputDown: 
   placeholderInput: 
+  falseButton: 
+  trueButton: 
+  wrongCommands: 
+  rightCommands: 
+  finalTitleUI: 
+  buttonNext: 
   playText: {fileID: 909375486}
   creditsText: {fileID: 755728677}
   exitText: {fileID: 1679092472}

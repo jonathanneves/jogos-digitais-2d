@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
-    private Constants contants = new Constants();
+    private Constants constants;
     public float waitTime = 0.5f;
     public float moveSpeed = 5f;
     private Console console;
@@ -20,9 +20,11 @@ public class Movement : MonoBehaviour
 
     private int wrongCommands = 0;
     private int rightCommands = 0;
+    private int compileReset = 0;
 
     void Start()
     {
+        constants = GameObject.Find("Loader").GetComponent<Constants>();
         rb = this.GetComponent<Rigidbody2D>();
         animator = this.GetComponent<Animator>();
         console = GameObject.Find("GM").GetComponent<Console>();
@@ -31,6 +33,8 @@ public class Movement : MonoBehaviour
     void Update()
     {
         if (console.isCompiling){
+            wrongCommands = 0;
+            rightCommands = 0;
             console.isCompiling = false;
             StartCoroutine(startMovement());
         }
@@ -66,24 +70,26 @@ public class Movement : MonoBehaviour
     private Vector2 newMovement(int index){
         currentPos = new Vector2(Mathf.Round(this.transform.position.x), Mathf.Round(this.transform.position.y));
         string currentCommand = console.commands[index].ToLower();
-        if (currentCommand == contants.inputLeft) {
+        if (currentCommand == constants.inputLeft) {
             movement.x = -1f;
             rightCommands++;
         }
-        else if (currentCommand == contants.inputRight) {
+        else if (currentCommand == constants.inputRight) {
             movement.x = 1f;
             rightCommands++;
         }
-        else if (currentCommand == contants.inputUp) {
+        else if (currentCommand == constants.inputUp) {
             movement.y = 1f;
             rightCommands++;
         }
-        else if (currentCommand == contants.inputDown) {
+        else if (currentCommand == constants.inputDown) {
             movement.y = -1f;
             rightCommands++;
         }
-        else
+        else{
             wrongCommands++;
+            StartCoroutine(console.GetComponent<Console>().redConsole());
+        }
 
         movement = movement + currentPos;
         return movement;
@@ -94,5 +100,14 @@ public class Movement : MonoBehaviour
         canMove = false;
         console.isCompiling = false;
         gameOver = true;
+        compileReset++;
+    }
+
+    public int[] getScore(){
+        int[] score = new int[2];
+        score[0] = rightCommands;
+        score[1] = wrongCommands;
+        return score;
     }
 }
+

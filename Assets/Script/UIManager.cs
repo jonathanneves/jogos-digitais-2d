@@ -10,9 +10,9 @@ public class UIManager : MonoBehaviour
     public TMP_Text textDialogue;
     [HideInInspector] public bool estaDigitando = false;
     [HideInInspector] public bool endDialogue = false;
+    public AudioSource dialogueFX;
 
     [Header("Typping Effect Coroutine")]
-    //public float timeBtwChar = 0f;
     public float delayTypping = 0.05f;
 
     void Start(){
@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
             int visibleCount = counter % (totalVisibleCharacters + 1);
             textDialogue.maxVisibleCharacters = visibleCount;
             counter++;
+            dialogueFX.Play();
             yield return new WaitForSeconds(delayTypping);
         }
         nextDialogue++;

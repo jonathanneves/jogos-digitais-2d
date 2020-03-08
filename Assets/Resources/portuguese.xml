@@ -23,7 +23,7 @@
 		<dialogue>{i}Olá mundo!{/i}</dialogue>
 	</page>
 	<page number = "2">
-		<dialogue>Eu sou {b}F1-B0{/b}, um Droide criado para concertos e reparos de dispositivos eletrônicos.</dialogue>
+		<dialogue>Eu sou {b}F1-B0{/b}, um Droide criado para concerto de dispositivos eletrônicos.</dialogue>
 	</page>
 
 	<page number = "3">
@@ -31,7 +31,7 @@
 	</page>
 
 	<page number = "4">
-		<dialogue>Haha brincadeira!</dialogue>
+		<dialogue>{i}Haha brincadeira!{/i}</dialogue>
 	</page>
 
 	<page number = "5">
@@ -43,10 +43,10 @@
 	</page> 
 	
 	<page number = "7">
-		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em linhas, um em baixo do outro. Depois é só compilar.</dialogue>
+		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em linhas, um em baixo do outro. Depois {b}é só compilar.{/b}</dialogue>
 	</page> 
 	
 	<page number = "8">
-		<dialogue>Agora é sua vez, me ajude a concertar este relógio digital levando este {i}mini-processador{i} até a plataforma de energia.</dialogue>
+		<dialogue>Agora é sua vez, me ajude a concertar este relógio digital levando este {i}mini-processador{i} até a {i}plataforma de energia{/i}.</dialogue>
 	</page> 
 </chapter_1>

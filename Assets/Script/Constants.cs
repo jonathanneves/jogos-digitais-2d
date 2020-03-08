@@ -12,13 +12,13 @@ public class Constants : MonoBehaviour
     [HideInInspector] public string inputRight = "direita";
     [HideInInspector] public string inputUp = "cima";
     [HideInInspector] public string inputDown = "baixo";
-    [HideInInspector] public string placeholderInput;
-    [HideInInspector] public string falseButton;
-    [HideInInspector] public string trueButton;
-    [HideInInspector] public string wrongCommands;
-    [HideInInspector] public string rightCommands;
-    [HideInInspector] public string finalTitleUI;
-    [HideInInspector] public string buttonNext;
+    [HideInInspector] public string placeholderInput = ">Digite um comando...";
+    [HideInInspector] public string falseButton = "Falso";
+    [HideInInspector] public string trueButton = "Verdadeiro";
+    [HideInInspector] public string wrongCommands = "Comandos Errados:";
+    [HideInInspector] public string rightCommands = "Comandos Corretos:";
+    [HideInInspector] public string finalTitleUI = "Compilado Com Sucesso!";
+    [HideInInspector] public string buttonNext = "Próxima Fase";
     public Text playText;
     public Text creditsText;
     public Text exitText;
@@ -40,5 +40,6 @@ public class Constants : MonoBehaviour
             finalTitleUI = map.Parent.Element("finalTitleUI").Value.Trim();
             buttonNext = map.Parent.Element("buttonNext").Value.Trim();
         }
+        DontDestroyOnLoad(this);
     }
 }

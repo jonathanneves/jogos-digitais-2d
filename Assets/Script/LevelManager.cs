@@ -16,18 +16,8 @@ public class LevelManager : MonoBehaviour
     public Button compile;
     public Button reset;
     public InputField textInput;
-    [Space(10)]
-    [Header("UI Configuration")]
-    private Constants constants = new Constants();
-    public Text trueButtonText;
-    public Text falseButtonText;
-    public TMP_Text fintalTitleUI;
-    public TMP_Text rightCommandsText;
-    public TMP_Text wrongCommandsText;
-    public Text nextButton;
 
     void Start(){
-        updateUI();
         actualScene = SceneManager.GetActiveScene().name;
         consoleAnim = GameObject.Find("Console").GetComponent<Animator>();
         if(actualScene == "Fase 1"){
@@ -60,14 +50,5 @@ public class LevelManager : MonoBehaviour
         compile.enabled = status;
         reset.enabled = status;
         textInput.enabled = status;
-    }
-
-    void updateUI(){
-        trueButtonText.text = constants.falseButton;
-        falseButtonText.text = constants.trueButton;
-        fintalTitleUI.text = constants.finalTitleUI;
-        rightCommandsText.text = constants.rightCommands;
-        wrongCommandsText.text = constants.wrongCommands;
-        nextButton.text = constants.buttonNext;
     }
 }

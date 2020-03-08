@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Console : MonoBehaviour
 {
-    private Constants constants = new Constants();
+    private Constants constants;
 
     [HideInInspector] public bool isCompiling = false;
     [HideInInspector] public string[] commands;
@@ -20,10 +20,15 @@ public class Console : MonoBehaviour
     private GameObject currentLevel;
 
     public Button compileButton;
+    public Button resetButton;
     public Text placeholderInputField;
+    public GameObject finalPanel;
+    private Animator transition;
 
     void Start(){
+        constants = GameObject.Find("Loader").GetComponent<Constants>();
         placeholderInputField.text = constants.placeholderInput;
+        transition = GameObject.Find("Transition").GetComponent<Animator>();
         currentLevel = Instantiate(newLevel, newLevel.transform.position, newLevel.transform.rotation) as GameObject;
         textInput = GameObject.Find("InputField").GetComponent<InputField>();
         actualColor = textInput.GetComponent<Image>().color;
@@ -53,9 +58,16 @@ public class Console : MonoBehaviour
         }
     }
 
+    public IEnumerator redConsole(){
+        textInput.GetComponent<Image>().color = new Color(1, 0, 0);
+        yield return new WaitForSeconds(0.4f);
+        textInput.GetComponent<Image>().color = new Color(0, 1, 0);
+    }
+
     private IEnumerator StartAnimationChangeLevel(){
         isReseting = true;
         compileButton.enabled = false;
+        resetButton.enabled = false;
         currentLevel.GetComponent<Animator>().SetBool("MoveLeft", true);
         yield return new WaitForSeconds(1f);
         if(currentLevel != null){
@@ -65,5 +77,17 @@ public class Console : MonoBehaviour
         yield return new WaitForSeconds(1f);
         isReseting = false;
         compileButton.enabled = true;
+        resetButton.enabled = true;
+    }
+
+    public void disableScene(){
+        finalPanel.SetActive(true);
+    }
+
+    public IEnumerator LoadNewSceneAfterTransition() {
+        transition.SetBool("animationOut", true);
+        yield return new WaitForSeconds(1f);
+        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

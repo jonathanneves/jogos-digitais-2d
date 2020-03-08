@@ -9,14 +9,14 @@ public class CheckPlataform : MonoBehaviour
 
     public float waitTime = 0.6f;
     private int currentConnected = 0;
-    private GameObject player;
+    private Movement player;
     private GameObject[] plataforms;
     public GameObject QuizUI;
     public GameObject FinalUI;
     private TMP_Text dialogoText;
     private bool isWaiting = true;
     private Animator goComputer;
-
+    private bool isOver;
 
     void Awake(){
         StartCoroutine(getAllReferences());
@@ -26,9 +26,8 @@ public class CheckPlataform : MonoBehaviour
     {
         if(!isWaiting){
             if (player.GetComponent<Movement>().gameOver && currentConnected != plataforms.Length) {
-                Debug.Log("Completado");
                 GameObject.Find("GM").GetComponent<Console>().resetLevel();
-                player.GetComponent<Movement>().gameOver = false;
+                player.gameOver = false;
             }
             if (currentConnected == plataforms.Length){
                 isWaiting = true;
@@ -38,19 +37,16 @@ public class CheckPlataform : MonoBehaviour
     }
 
     public void increasePlataformCount(GameObject computer){
-        goComputer = computer.GetComponent<Animator>();
         isWaiting = true;
+        goComputer = computer.GetComponent<Animator>();
         StartCoroutine(openQuizUI());
-        if(currentConnected == plataforms.Length){
-            Debug.Log("Fim do Level");
-        }
     }
 
     IEnumerator getAllReferences(){
         isWaiting = true;
         yield return new WaitForSeconds(1f);
         plataforms = GameObject.FindGameObjectsWithTag("Plataform");
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         dialogoText = QuizUI.transform.GetChild(0).GetComponent<TMP_Text>();
         isWaiting = false;
     }
@@ -106,7 +102,7 @@ public class CheckPlataform : MonoBehaviour
         FinalUI.transform.GetChild(1).GetComponent<TMP_Text>().text += " " + result[0];
         FinalUI.transform.GetChild(2).GetComponent<TMP_Text>().text += " " + result[1];
         yield return new WaitForSeconds(1f);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     public void nextLevel() {

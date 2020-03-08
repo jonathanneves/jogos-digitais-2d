@@ -40,7 +40,6 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(delayTypping);
         }
         nextDialogue++;
-        Debug.Log(nextDialogue);
         if (nextDialogue == 7)
             endDialogue = true;
         estaDigitando = false;

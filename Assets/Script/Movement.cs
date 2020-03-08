@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     private Vector2 currentPos;
     private Rigidbody2D rb;
     private Vector2 movement;
-    private bool canMove = false;
+    public bool canMove = false;
     private Animator animator;
     private Color actualColor;
     [HideInInspector] public bool gameOver = false;

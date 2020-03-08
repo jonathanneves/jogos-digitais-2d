@@ -8,6 +8,9 @@ public class Plataform : MonoBehaviour
     public bool answer;
  
     void OnTriggerEnter2D(Collider2D col) {
-        GameObject.Find("CheckLevel").GetComponent<CheckPlataform>().increasePlataformCount(col.gameObject);
+        Collider2D myCollider = this.GetComponent<Collider2D>();
+        if (col.bounds.Intersects(myCollider.bounds)){
+            GameObject.Find("CheckLevel").GetComponent<CheckPlataform>().increasePlataformCount(col.gameObject);
+        }
     }
 }

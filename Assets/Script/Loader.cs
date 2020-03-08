@@ -18,8 +18,7 @@ public class Loader : MonoBehaviour {
     bool finishedLoading = false;
 
     void Start(){
-        if(this != null)
-            currentLanguage("portuguese");
+        currentLanguage("portuguese");
     }
 
     void LoadXML(string currentLanguage) {

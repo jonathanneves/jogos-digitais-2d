@@ -1266,7 +1266,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.4}
+  m_Size: {x: 1.05, y: 1.05}
   m_EdgeRadius: 0
 --- !u!114 &6733699840716241488
 MonoBehaviour:
@@ -1827,7 +1827,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.8
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -2209,7 +2209,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: 0, g: 0, b: 0, a: 0}
   - m_RefCount: 1
-    m_Data: {r: 0.8680854, g: 0.53001696, b: 0.6182019, a: 1}
+    m_Data: {r: 0.9940524, g: 0.69217426, b: 0.7132556, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2380,6 +2380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 0.5
   moveSpeed: 5
+  canMove: 0
   gameOver: 0
 --- !u!61 &6733699842371069371
 BoxCollider2D:

@@ -24,15 +24,19 @@ public class Console : MonoBehaviour
     public Text placeholderInputField;
     public GameObject finalPanel;
     private Animator transition;
+    private AudioSource audioSource;
+    public AudioClip errorFX;
+
 
     void Start(){
         constants = GameObject.Find("Loader").GetComponent<Constants>();
-        placeholderInputField.text = constants.placeholderInput;
         transition = GameObject.Find("Transition").GetComponent<Animator>();
-        currentLevel = Instantiate(newLevel, newLevel.transform.position, newLevel.transform.rotation) as GameObject;
         textInput = GameObject.Find("InputField").GetComponent<InputField>();
-        actualColor = textInput.GetComponent<Image>().color;
         consoleAnim = GameObject.Find("Console").GetComponent<Animation>();
+        audioSource = this.gameObject.GetComponent<AudioSource>();
+        placeholderInputField.text = constants.placeholderInput;
+        currentLevel = Instantiate(newLevel, newLevel.transform.position, newLevel.transform.rotation) as GameObject;
+        actualColor = textInput.GetComponent<Image>().color;
     }
 
     public void compile() {
@@ -60,6 +64,7 @@ public class Console : MonoBehaviour
 
     public IEnumerator redConsole(){
         textInput.GetComponent<Image>().color = new Color(1, 0, 0);
+        audioSource.PlayOneShot(errorFX);
         yield return new WaitForSeconds(0.4f);
         textInput.GetComponent<Image>().color = new Color(0, 1, 0);
     }

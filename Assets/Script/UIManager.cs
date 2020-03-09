@@ -10,12 +10,14 @@ public class UIManager : MonoBehaviour
     public TMP_Text textDialogue;
     [HideInInspector] public bool estaDigitando = false;
     [HideInInspector] public bool endDialogue = false;
-    public AudioSource dialogueFX;
+    private AudioSource audioSource;
+    public AudioClip dialogueFX;
 
     [Header("Typping Effect Coroutine")]
     public float delayTypping = 0.05f;
 
     void Start(){
+        audioSource = this.gameObject.GetComponent<AudioSource>();
         loadXml = GameObject.Find("Loader").GetComponent<Loader>();
     }
   
@@ -36,7 +38,7 @@ public class UIManager : MonoBehaviour
             int visibleCount = counter % (totalVisibleCharacters + 1);
             textDialogue.maxVisibleCharacters = visibleCount;
             counter++;
-            dialogueFX.Play();
+            audioSource.PlayOneShot(dialogueFX);
             yield return new WaitForSeconds(delayTypping);
         }
         nextDialogue++;

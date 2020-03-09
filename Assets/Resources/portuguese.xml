@@ -27,7 +27,7 @@
 	</page>
 
 	<page number = "3">
-		<dialogue>Bem, para me controlar é bem simples basta usar as setas do teclado.</dialogue>
+		<dialogue>Bem, para me controlar é bem simples basta usar as setas do teclado...</dialogue>
 	</page>
 
 	<page number = "4">
@@ -47,6 +47,6 @@
 	</page> 
 	
 	<page number = "8">
-		<dialogue>Agora é sua vez, me ajude a concertar este relógio digital levando este {i}mini-processador{i} até a {i}plataforma de energia{/i}.</dialogue>
+		<dialogue>Agora é sua vez, me ajude a concertar este relógio digital levando este {i}mini-processador{/i} até a {i}plataforma de energia{/i}.</dialogue>
 	</page> 
 </chapter_1>

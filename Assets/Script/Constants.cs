@@ -19,6 +19,8 @@ public class Constants : MonoBehaviour
     [HideInInspector] public string rightCommands = "Comandos Corretos:";
     [HideInInspector] public string finalTitleUI = "Compilado Com Sucesso!";
     [HideInInspector] public string buttonNext = "Próxima Fase";
+    [HideInInspector] public string resetCount = "Vezes Resetados:";
+    [HideInInspector] public string theEndText = "Agora eu já aprendi o suficiente e posso agir por conta própria. Obrigado por Jogar Humano!";
     public Text playText;
     public Text creditsText;
     public Text exitText;
@@ -39,6 +41,8 @@ public class Constants : MonoBehaviour
             rightCommands = map.Parent.Element("rightCommands").Value.Trim();
             finalTitleUI = map.Parent.Element("finalTitleUI").Value.Trim();
             buttonNext = map.Parent.Element("buttonNext").Value.Trim();
+            resetCount = map.Parent.Element("resetCount").Value.Trim();
+            theEndText = map.Parent.Element("theEndText").Value.Trim();
         }
         DontDestroyOnLoad(this);
     }

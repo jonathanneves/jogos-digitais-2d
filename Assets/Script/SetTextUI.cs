@@ -14,6 +14,7 @@ public class SetTextUI : MonoBehaviour
     public TMP_Text titleUI;
     public TMP_Text rightText;
     public TMP_Text wrongText;
+    public TMP_Text resetText;
     public Text nextButton;
 
     void Start()
@@ -24,6 +25,7 @@ public class SetTextUI : MonoBehaviour
         titleUI.text = constants.finalTitleUI;
         rightText.text = constants.rightCommands;
         wrongText.text = constants.wrongCommands;
+        resetText.text = constants.resetCount;
         nextButton.text = constants.buttonNext;
     }
 }

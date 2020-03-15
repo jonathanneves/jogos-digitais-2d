@@ -23,6 +23,8 @@ public class LevelManager : MonoBehaviour
         if(actualScene == "Fase 1"){
             dialogue.GetComponent<Animator>().SetBool("OpenDialogue", true);
             StartCoroutine(uiManager.typpingEffect(actualScene));
+        } else {
+            consoleAnim.SetBool("AbrirConsole", true);
         }
     }
 

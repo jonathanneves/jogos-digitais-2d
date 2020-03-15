@@ -15,15 +15,17 @@
 		<trueButton>Verdadeiro</trueButton>
 		<falseButton>Falso</falseButton>
 		<wrongCommands>Comandos Errados:</wrongCommands>
-		<rightCommands>Comandos Corretos:</rightCommands>
+		<rightCommands>Linhas Totais:</rightCommands>
 		<finalTitleUI>Compilado Com Sucesso!</finalTitleUI>
 		<buttonNext>Próxima Fase</buttonNext>
+		<resetCount>Vezes Resetados:</resetCount>
+		<theEndText>Agora eu já aprendi o suficiente e posso agir por conta própria. Obrigado por Jogar Humano!</theEndText>
 	</mappingUI> 
 	<page number = "1">
 		<dialogue>{i}Olá mundo!{/i}</dialogue>
 	</page>
 	<page number = "2">
-		<dialogue>Eu sou {b}F1-B0{/b}, um Droide criado para concerto de dispositivos eletrônicos.</dialogue>
+		<dialogue>Eu sou {color=#ffffff}F1-B0{/color=#ffffff}, um Droide criado para concerto de dispositivos eletrônicos.</dialogue>
 	</page>
 
 	<page number = "3">
@@ -39,14 +41,14 @@
 	</page>
 
 	<page number = "6">
-		<dialogue>Você pode usar o console ao lado para me controlar. Basta digitar os comandos {b}Esquerda, Direita, Cima e Baixo.{/b}</dialogue>
+		<dialogue>Você pode usar o console ao lado para me controlar. Basta digitar os comandos {color=#ffffff}Esquerda, Direita, Cima e Baixo.{/color=#ffffff}</dialogue>
 	</page> 
 	
 	<page number = "7">
-		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em linhas, um em baixo do outro. Depois {b}é só compilar.{/b}</dialogue>
+		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em linhas, um em baixo do outro. Depois é só compilar.</dialogue>
 	</page> 
 	
 	<page number = "8">
-		<dialogue>Agora é sua vez, me ajude a concertar este relógio digital levando este {i}mini-processador{/i} até a {i}plataforma de energia{/i}.</dialogue>
+		<dialogue>Agora é sua vez, me ajude a concertar este relógio digital levando este {color=#46B74F}mini-processador{/color=#46B74F} até a {color=#ff7400}plataforma de energia{/color=#ff7400}.</dialogue>
 	</page> 
 </chapter_1>

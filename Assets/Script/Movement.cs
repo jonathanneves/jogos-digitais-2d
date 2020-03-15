@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     private Constants constants;
-    public float waitTime = 0.5f;
-    public float moveSpeed = 5f;
+    public float waitTime = 0.55f;
+    public float moveSpeed = 1.5f;
     private Console console;
 
     private Vector2 currentPos;
@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
 
     private int wrongCommands = 0;
     private int rightCommands = 0;
-    private int compileReset = 0;
+    private int consoleReset = 0;
 
     void Start()
     {
@@ -68,29 +68,27 @@ public class Movement : MonoBehaviour
     }
 
     private Vector2 newMovement(int index){
+
         currentPos = new Vector2(Mathf.Round(this.transform.position.x), Mathf.Round(this.transform.position.y));
         string currentCommand = console.commands[index].ToLower();
+
         if (currentCommand == constants.inputLeft) {
             movement.x = -1f;
-            rightCommands++;
         }
         else if (currentCommand == constants.inputRight) {
             movement.x = 1f;
-            rightCommands++;
         }
         else if (currentCommand == constants.inputUp) {
             movement.y = 1f;
-            rightCommands++;
         }
         else if (currentCommand == constants.inputDown) {
             movement.y = -1f;
-            rightCommands++;
         }
         else{
             wrongCommands++;
             StartCoroutine(console.GetComponent<Console>().redConsole());
         }
-
+        rightCommands++;
         movement = movement + currentPos;
         return movement;
     }
@@ -100,13 +98,14 @@ public class Movement : MonoBehaviour
         canMove = false;
         console.isCompiling = false;
         gameOver = true;
-        compileReset++;
+        consoleReset++;
     }
 
     public int[] getScore(){
         int[] score = new int[2];
         score[0] = rightCommands;
         score[1] = wrongCommands;
+        score[2] = consoleReset;
         return score;
     }
 }

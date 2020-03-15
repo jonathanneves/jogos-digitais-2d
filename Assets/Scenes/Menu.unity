@@ -163,6 +163,9 @@ MonoBehaviour:
   rightCommands: 
   finalTitleUI: 
   buttonNext: 
+  resetCount: 'Vezes Resetados:'
+  theEndText: "Agora eu j\xE1 aprendi o suficiente e posso agir por conta pr\xF3pria.
+    Obrigado por Jogar Humano!"
   playText: {fileID: 909375486}
   creditsText: {fileID: 755728677}
   exitText: {fileID: 1679092472}

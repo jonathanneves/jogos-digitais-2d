@@ -42,6 +42,9 @@ public class Console : MonoBehaviour
     public void compile() {
         if (!isCompiling) {
             commands = textInput.text.Split(char.Parse("\n"));
+            List<string> gameObjectList = new List<string>(commands);
+            gameObjectList.RemoveAll(x => x == "");
+            commands = gameObjectList.ToArray();
             isCompiling = true;
             compileButton.enabled = false;
             textInput.GetComponent<Image>().color = new Color(0, 1, 0);
@@ -77,7 +80,7 @@ public class Console : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if(currentLevel != null){
             Destroy(currentLevel);
-            currentLevel = Instantiate(newLevel, newLevel.transform.position, newLevel.transform.rotation) as GameObject; ;
+            currentLevel = Instantiate(newLevel, newLevel.transform.position, newLevel.transform.rotation) as GameObject;
         }
         yield return new WaitForSeconds(1f);
         isReseting = false;
@@ -92,7 +95,6 @@ public class Console : MonoBehaviour
     public IEnumerator LoadNewSceneAfterTransition() {
         transition.SetBool("animationOut", true);
         yield return new WaitForSeconds(1f);
-        Application.Quit();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -67,6 +67,7 @@
     <Compile Include="Assets\Script\ClickSound.cs" />
     <Compile Include="Assets\Script\Console.cs" />
     <Compile Include="Assets\Script\Constants.cs" />
+    <Compile Include="Assets\Script\FinalManager.cs" />
     <Compile Include="Assets\Script\LevelManager.cs" />
     <Compile Include="Assets\Script\Loader.cs" />
     <Compile Include="Assets\Script\MenuManager.cs" />

@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     }
   
 
-    public IEnumerator typpingEffect(string actualScene){
+    public IEnumerator typpingEffect(){
 
         estaDigitando = true;
         if(nextDialogue == 0)

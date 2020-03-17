@@ -19,7 +19,7 @@
 		<finalTitleUI>Successfully Compiled!</finalTitleUI>
 		<buttonNext>Next Stage</buttonNext>
 		<resetCount>Reset Times:</resetCount>
-		<theEndText>Now I've learned enough and I can work by myself. Thank you for playing Human!</theEndText>
+		<theEndText>Now I've learned enough and I can work by myself. Thank you for playing, Human!</theEndText>
 	</mappingUI> 
 	<page number = "1">
 		<dialogue>{i}Hello World!{/i}</dialogue>

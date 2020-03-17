@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CheckPlataform : MonoBehaviour
 {
 
-    public float waitTime = 0.5f;
+    public float waitTime = 0.6f;
     private int currentConnected = 0;
     private Movement player;
     private GameObject[] plataforms;

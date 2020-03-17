@@ -102,7 +102,7 @@ public class Movement : MonoBehaviour
     }
 
     public int[] getScore(){
-        int[] score = new int[2];
+        int[] score = new int[3];
         score[0] = rightCommands;
         score[1] = wrongCommands;
         score[2] = consoleReset;

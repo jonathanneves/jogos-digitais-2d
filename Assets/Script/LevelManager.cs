@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
         consoleAnim = GameObject.Find("Console").GetComponent<Animator>();
         if(actualScene == "Fase 1"){
             dialogue.GetComponent<Animator>().SetBool("OpenDialogue", true);
-            StartCoroutine(uiManager.typpingEffect(actualScene));
+            StartCoroutine(uiManager.typpingEffect());
         } else {
             consoleAnim.SetBool("AbrirConsole", true);
         }
@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour
         if (actualScene == "Fase 1") {
             if (Input.anyKey && !uiManager.estaDigitando
                     && uiManager.nextDialogue < uiManager.loadXml.data.Count) {
-                StartCoroutine(uiManager.typpingEffect(actualScene));
+                StartCoroutine(uiManager.typpingEffect());
                 if(uiManager.nextDialogue == 5){
                     consoleAnim.SetBool("AbrirConsole", true);
                     enableUI(false);

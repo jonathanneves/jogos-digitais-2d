@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
 {
 
     private Animator animator;
+    public Transform canvas;
 
     void Start() {
         animator = GameObject.Find("Transition").GetComponent<Animator>();
@@ -24,5 +25,13 @@ public class MenuManager : MonoBehaviour
 
     public void LeaveGame(){
         Application.Quit();    
+    }
+
+    public void Creditos(){
+        canvas.localPosition = new Vector3(-2200f,0,0);
+    }
+
+    public void Voltar(){
+        canvas.localPosition = new Vector3(0, 0, 0);
     }
 }

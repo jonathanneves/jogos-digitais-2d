@@ -2886,7 +2886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b1672fde3bee844a4adcf8e87e0d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quiz: a=250; if 500+2 <= 250*2
+  quiz: a=250; b=2; if 500+b <= a*b
   answer: 0
 --- !u!1 &5053845249209602136
 GameObject:

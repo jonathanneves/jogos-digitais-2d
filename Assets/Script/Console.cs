@@ -39,6 +39,12 @@ public class Console : MonoBehaviour
         actualColor = textInput.GetComponent<Image>().color;
     }
 
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene("Menu");
+        }
+    }
+
     public void compile() {
         if (!isCompiling) {
             commands = textInput.text.Split(char.Parse("\n"));

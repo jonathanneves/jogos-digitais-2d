@@ -21,15 +21,20 @@ public class Constants : MonoBehaviour
     [HideInInspector] public string buttonNext = "Próxima Fase";
     [HideInInspector] public string resetCount = "Vezes Resetados:";
     [HideInInspector] public string theEndText = "Agora eu já aprendi o suficiente e posso agir por conta própria. Obrigado por Jogar Humano!";
+
     public Text playText;
     public Text creditsText;
     public Text exitText;
+    public TMP_Text titleCredits;
+    public Text buttonBack;
 
     public void mappingUI(IEnumerable<XElement> constants) {
         foreach (var map in constants) {
             playText.text = map.Parent.Element("buttonPlay").Value.Trim();
             creditsText.text = map.Parent.Element("buttonCredits").Value.Trim();
             exitText.text = map.Parent.Element("buttonExit").Value.Trim();
+            titleCredits.text = map.Parent.Element("titleCredits").Value.Trim();
+            buttonBack.text = map.Parent.Element("buttonBack").Value.Trim();
             inputLeft = map.Parent.Element("inputLeft").Value.Trim();
             inputRight = map.Parent.Element("inputRight").Value.Trim();
             inputUp = map.Parent.Element("inputUp").Value.Trim();

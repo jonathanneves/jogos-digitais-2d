@@ -7,6 +7,8 @@
 		<buttonPlay>Jogar</buttonPlay>
 		<buttonCredits>Créditos</buttonCredits>
 		<buttonExit>Sair</buttonExit>
+		<titleCredits>Creditos</titleCredits>
+		<buttonBack>Voltar</buttonBack>
 		<inputRight>direita</inputRight>
 		<inputLeft>esquerda</inputLeft>
 		<inputUp>cima</inputUp>
@@ -19,7 +21,7 @@
 		<finalTitleUI>Compilado Com Sucesso!</finalTitleUI>
 		<buttonNext>Próxima Fase</buttonNext>
 		<resetCount>Vezes Resetados:</resetCount>
-		<theEndText>Agora eu já aprendi o suficiente e posso agir por conta própria. Obrigado por Jogar Humano!</theEndText>
+		<theEndText>Agora eu já aprendi o suficiente e posso agir por conta própria. Obrigado por Jogar, Humano!</theEndText>
 	</mappingUI> 
 	<page number = "1">
 		<dialogue>{i}Olá mundo!{/i}</dialogue>

@@ -47,7 +47,7 @@ public class Console : MonoBehaviour
 
     public void compile() {
         if (!isCompiling) {
-            commands = textInput.text.Split(char.Parse("\n"));
+            commands = textInput.text.Split(char.Parse("\n"),char.Parse("\r"));
             List<string> gameObjectList = new List<string>(commands);
             gameObjectList.RemoveAll(x => x == "");
             commands = gameObjectList.ToArray();
@@ -75,7 +75,7 @@ public class Console : MonoBehaviour
         textInput.GetComponent<Image>().color = new Color(1, 0, 0);
         audioSource.PlayOneShot(errorFX);
         yield return new WaitForSeconds(0.4f);
-        textInput.GetComponent<Image>().color = new Color(0, 1, 0);
+        textInput.GetComponent<Image>().color = actualColor;
     }
 
     private IEnumerator StartAnimationChangeLevel(){
@@ -83,6 +83,7 @@ public class Console : MonoBehaviour
         compileButton.enabled = false;
         resetButton.enabled = false;
         currentLevel.GetComponent<Animator>().SetBool("MoveLeft", true);
+        textInput.GetComponent<Image>().color = actualColor;
         yield return new WaitForSeconds(1f);
         if(currentLevel != null){
             Destroy(currentLevel);

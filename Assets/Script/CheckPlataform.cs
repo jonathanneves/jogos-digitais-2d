@@ -15,7 +15,8 @@ public class CheckPlataform : MonoBehaviour
     public GameObject FinalUI;
     private TMP_Text dialogoText;
     private bool isWaiting = true;
-    private Animator goComputer;
+    private Animator animComputer;
+    private Rigidbody2D rbComputer;
     private bool isOver;
     private AudioSource audioSource;
 
@@ -39,7 +40,8 @@ public class CheckPlataform : MonoBehaviour
 
     public void increasePlataformCount(GameObject computer){
         isWaiting = true;
-        goComputer = computer.GetComponent<Animator>();
+        rbComputer = computer.GetComponent<Rigidbody2D>();
+        animComputer = computer.GetComponent<Animator>();
         StartCoroutine(openQuizUI());
     }
 
@@ -66,6 +68,7 @@ public class CheckPlataform : MonoBehaviour
 
     IEnumerator openQuizUI(){
         QuizUI.SetActive(true);
+        rbComputer.isKinematic = false;
         yield return new WaitForSeconds(waitTime);
         Time.timeScale = 0f;
         dialogoText.text = plataforms[currentConnected].GetComponent<Plataform>().quiz;
@@ -82,9 +85,9 @@ public class CheckPlataform : MonoBehaviour
         QuizUI.transform.GetChild(1).GetComponent<Button>().enabled = true;
         QuizUI.transform.GetChild(2).GetComponent<Button>().enabled = true;
         QuizUI.SetActive(false);
-        goComputer.SetBool("ComputerOn", true);
+        animComputer.SetBool("ComputerOn", true);
         audioSource.Play();
-        goComputer.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        animComputer.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         currentConnected++;
         QuizUI.GetComponent<Image>().color = new Color(1f, 1f, 1f);
     }
@@ -92,12 +95,12 @@ public class CheckPlataform : MonoBehaviour
     IEnumerator resetingLevel(){
         QuizUI.transform.GetChild(1).GetComponent<Button>().enabled = false;
         QuizUI.transform.GetChild(2).GetComponent<Button>().enabled = false;
-        dialogoText.text = "";
         Time.timeScale = 1f;
         QuizUI.GetComponent<Animator>().SetBool("CloseQuiz", true);
         GameObject.Find("GM").GetComponent<Console>().resetLevel();
         currentConnected = 0;
         yield return new WaitForSeconds(waitTime);
+        dialogoText.text = "";
         QuizUI.GetComponent<Image>().color = new Color(1f, 1f, 1f);
     }
 

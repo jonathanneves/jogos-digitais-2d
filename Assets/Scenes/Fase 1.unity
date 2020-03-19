@@ -898,7 +898,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 12
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1057,16 +1057,16 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: ab5b4ad692d472a4e80187a672b8df51, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 8178778759286507688, guid: 8e23267775db47046a2d61437d3de12d,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 7104917798757683819, guid: 8e23267775db47046a2d61437d3de12d,
       type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 8178778759286507688, guid: 8e23267775db47046a2d61437d3de12d,
+      type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -7660256860298491987, guid: 8e23267775db47046a2d61437d3de12d,
       type: 3}
@@ -5936,7 +5936,7 @@ MonoBehaviour:
   estaDigitando: 0
   endDialogue: 0
   dialogueFX: {fileID: 8300000, guid: 68b2a1dc57d79014aa9dd205dcd929f0, type: 3}
-  delayTypping: 0.04
+  delayTypping: 0.05
 --- !u!82 &1109441631
 AudioSource:
   m_ObjectHideFlags: 0

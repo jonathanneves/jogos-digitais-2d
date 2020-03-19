@@ -38,8 +38,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1372,7 +1374,7 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Fase 1.unity
   - Assets/Scenes/Fase 2.unity
   - Assets/Scenes/Fase 3.unity
-  - Assets/Scenes/Fase 5.unity
   - Assets/Scenes/Fase 4.unity
+  - Assets/Scenes/Fase 5.unity
   - Assets/Scenes/Final.unity
   playerPath: C:/Users/Jonathan/Desktop/Games/Unity/Fix-It-fibo/Fix-it-Fibo-2D.exe

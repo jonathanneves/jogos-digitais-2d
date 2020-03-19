@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-
+    private Constants constants;
     private Animator animator;
     public Transform canvas;
+    private string currentScene;
+
 
     void Start() {
+        constants = GameObject.Find("Loader").GetComponent<Constants>();
         animator = GameObject.Find("Transition").GetComponent<Animator>();
     }
 
@@ -20,7 +23,7 @@ public class MenuManager : MonoBehaviour
     private IEnumerator LoadNewSceneAfterTransition(){
         animator.SetBool("animationOut", true);
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(constants.currentScene);
     }
 
     public void LeaveGame(){
@@ -33,5 +36,10 @@ public class MenuManager : MonoBehaviour
 
     public void Voltar(){
         canvas.localPosition = new Vector3(0, 0, 0);
+    }
+
+    public void returnToMenu(string scene){
+        constants.currentScene = scene;
+        SceneManager.LoadScene("Menu");
     }
 }

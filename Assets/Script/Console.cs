@@ -41,7 +41,7 @@ public class Console : MonoBehaviour
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            SceneManager.LoadScene("Menu");
+            GameObject.Find("Loader").GetComponent<MenuManager>().returnToMenu(SceneManager.GetActiveScene().name); 
         }
     }
 

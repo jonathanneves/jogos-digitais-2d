@@ -16,7 +16,6 @@ public class CheckPlataform : MonoBehaviour
     private TMP_Text dialogoText;
     private bool isWaiting = true;
     private Animator animComputer;
-    private Rigidbody2D rbComputer;
     private bool isOver;
     private AudioSource audioSource;
 
@@ -29,6 +28,7 @@ public class CheckPlataform : MonoBehaviour
         if(!isWaiting){
             if (player.GetComponent<Movement>().gameOver && currentConnected != plataforms.Length) {
                 GameObject.Find("GM").GetComponent<Console>().resetLevel();
+                currentConnected = 0;
                 player.gameOver = false;
             }
             if (currentConnected == plataforms.Length){
@@ -40,7 +40,6 @@ public class CheckPlataform : MonoBehaviour
 
     public void increasePlataformCount(GameObject computer){
         isWaiting = true;
-        rbComputer = computer.GetComponent<Rigidbody2D>();
         animComputer = computer.GetComponent<Animator>();
         StartCoroutine(openQuizUI());
     }
@@ -68,7 +67,6 @@ public class CheckPlataform : MonoBehaviour
 
     IEnumerator openQuizUI(){
         QuizUI.SetActive(true);
-        rbComputer.isKinematic = false;
         yield return new WaitForSeconds(waitTime);
         Time.timeScale = 0f;
         dialogoText.text = plataforms[currentConnected].GetComponent<Plataform>().quiz;

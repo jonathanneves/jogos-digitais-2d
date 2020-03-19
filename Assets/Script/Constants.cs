@@ -21,12 +21,12 @@ public class Constants : MonoBehaviour
     [HideInInspector] public string buttonNext = "Próxima Fase";
     [HideInInspector] public string resetCount = "Vezes Resetados:";
     [HideInInspector] public string theEndText = "Agora eu já aprendi o suficiente e posso agir por conta própria. Obrigado por Jogar Humano!";
-
     public Text playText;
     public Text creditsText;
     public Text exitText;
     public TMP_Text titleCredits;
     public Text buttonBack;
+    [HideInInspector] public string currentScene = "Fase 1";
 
     public void mappingUI(IEnumerable<XElement> constants) {
         foreach (var map in constants) {

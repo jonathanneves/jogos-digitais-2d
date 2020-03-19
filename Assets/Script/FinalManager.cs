@@ -22,6 +22,7 @@ public class FinalManager : MonoBehaviour
     void Update(){
         if (Input.anyKey && !estaDigitando){
             Debug.Log("Saiu do jogo!");
+            constants.currentScene = "Fase 1";
             SceneManager.LoadScene("Menu");
         }
     }

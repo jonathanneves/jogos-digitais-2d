@@ -20,14 +20,13 @@ public class Movement : MonoBehaviour
 
     private int wrongCommands = 0;
     private int rightCommands = 0;
-    private int consoleReset = 0;
 
     void Start()
     {
-        constants = GameObject.Find("Loader").GetComponent<Constants>();
+        constants = FindObjectOfType<Constants>();
         rb = this.GetComponent<Rigidbody2D>();
         animator = this.GetComponent<Animator>();
-        console = GameObject.Find("GM").GetComponent<Console>();
+        console = FindObjectOfType<Console>();
     }
 
     void Update()
@@ -38,13 +37,9 @@ public class Movement : MonoBehaviour
             console.isCompiling = false;
             StartCoroutine(startMovement());
         }
-    }
-
-    void FixedUpdate()
-    {
-        if(canMove){
-            if(Vector2.Distance(this.transform.position, movement) > 0.01){
-                transform.position = Vector2.MoveTowards(transform.position, movement, moveSpeed * Time.fixedDeltaTime);
+        if (canMove) {
+            if (Vector2.Distance(this.transform.position, movement) > 0.01) {
+                transform.position = Vector2.MoveTowards(transform.position, movement, moveSpeed * Time.deltaTime);
             }
         }
     }
@@ -98,14 +93,13 @@ public class Movement : MonoBehaviour
         canMove = false;
         console.isCompiling = false;
         gameOver = true;
-        consoleReset++;
     }
 
     public int[] getScore(){
         int[] score = new int[3];
         score[0] = rightCommands;
         score[1] = wrongCommands;
-        score[2] = consoleReset;
+        score[2] = console.countReset;
         return score;
     }
 }

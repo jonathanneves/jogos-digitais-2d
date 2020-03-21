@@ -47,10 +47,10 @@
 	</page> 
 	
 	<page number = "7">
-		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em linhas, um em baixo do outro. Depois é só compilar.</dialogue>
+		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em linhas, um em baixo do outro. Depois é só {b}compilar{/b}.</dialogue>
 	</page> 
 	
 	<page number = "8">
-		<dialogue>Agora é sua vez, me ajude a concertar este relógio digital levando este {color=#46B74F}mini-processador{/color=#46B74F} até a {color=#ff7400}plataforma de energia{/color=#ff7400}</dialogue>
+		<dialogue>Agora é sua vez, me ajude a concertar este dispositivo levando este {color=#46B74F}mini-processador{/color=#46B74F} até a {color=#ff7400}plataforma de energia{/color=#ff7400}</dialogue>
 	</page> 
 </chapter_1>

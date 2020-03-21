@@ -47,10 +47,10 @@
 	</page> 
 	
 	<page number = "7">
-		<dialogue>For that, It is necessary to send all the commands all at once separeted into lines, one under the other. After that, just compile them.</dialogue>
+		<dialogue>For that, It is necessary to send all the commands all at once separeted into lines, one under the other. After that, just {b}compile them{/b}.</dialogue>
 	</page> 
 	
 	<page number = "8">
-		<dialogue>Now it is your turn, help me to fixing this digital watch pushing this {color=#46B74F}mini-processor{/color=#46B74F} to the {color=#ff7400}energy plataform{/color=#ff7400}.</dialogue>
+		<dialogue>Now it is your turn, help me to fixing this device pushing this {color=#46B74F}mini-processor{/color=#46B74F} to the {color=#ff7400}energy plataform{/color=#ff7400}.</dialogue>
 	</page> 
 </chapter_1>

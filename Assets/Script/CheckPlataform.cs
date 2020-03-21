@@ -29,7 +29,7 @@ public class CheckPlataform : MonoBehaviour
     {
         if(!isWaiting){
             if (player.GetComponent<Movement>().gameOver && currentConnected != plataforms.Length) {
-                GameObject.Find("GM").GetComponent<Console>().resetLevel();
+                FindObjectOfType<Console>().resetLevel();
                 currentConnected = 0;
                 player.gameOver = false;
             }
@@ -54,6 +54,7 @@ public class CheckPlataform : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         dialogoText = QuizUI.transform.GetChild(0).GetComponent<TMP_Text>();
         isWaiting = false;
+        enableButton(false);
     }
 
     public void checkResult(bool answer) {
@@ -71,19 +72,17 @@ public class CheckPlataform : MonoBehaviour
         QuizUI.SetActive(true);
         yield return new WaitForSeconds(waitTime);
         Time.timeScale = 0f;
+        enableButton(true);
         dialogoText.text = plataforms[currentConnected].GetComponent<Plataform>().quiz;
     }
 
     IEnumerator closeQuizUI(){
-        QuizUI.transform.GetChild(1).GetComponent<Button>().enabled = false;
-        QuizUI.transform.GetChild(2).GetComponent<Button>().enabled = false;
+        enableButton(false);
         QuizUI.GetComponent<Animator>().SetBool("CloseQuiz", true);
         Time.timeScale = 1f;
         yield return new WaitForSeconds(waitTime);
         isWaiting = false;
         dialogoText.text = "";
-        QuizUI.transform.GetChild(1).GetComponent<Button>().enabled = true;
-        QuizUI.transform.GetChild(2).GetComponent<Button>().enabled = true;
         QuizUI.SetActive(false);
         animComputer.SetBool("ComputerOn", true);
         audioSource.PlayOneShot(successFx);
@@ -93,8 +92,7 @@ public class CheckPlataform : MonoBehaviour
     }
 
     IEnumerator resetingLevel(){
-        QuizUI.transform.GetChild(1).GetComponent<Button>().enabled = false;
-        QuizUI.transform.GetChild(2).GetComponent<Button>().enabled = false;
+        enableButton(false);
         Time.timeScale = 1f;
         QuizUI.GetComponent<Animator>().SetBool("CloseQuiz", true);
         GameObject.Find("GM").GetComponent<Console>().resetLevel();
@@ -107,17 +105,27 @@ public class CheckPlataform : MonoBehaviour
 
 
     IEnumerator openFinalUI(){
+        FindObjectOfType<Timer>().enabled = false;
         FinalUI.SetActive(true);
         GameObject.Find("GM").GetComponent<Console>().disableScene();
-        int[] result = player.GetComponent<Movement>().getScore();
-        FinalUI.transform.GetChild(1).GetComponent<TMP_Text>().text += " " + result[0];
-        FinalUI.transform.GetChild(2).GetComponent<TMP_Text>().text += " " + result[1];
-        FinalUI.transform.GetChild(3).GetComponent<TMP_Text>().text += " " + result[2];
+        setResultadoFinal();      
         yield return new WaitForSeconds(1f);
     }
 
     public void nextLevel() {
         FinalUI.SetActive(false);
         StartCoroutine(GameObject.Find("GM").GetComponent<Console>().LoadNewSceneAfterTransition());
+    }
+
+    private void enableButton(bool status){
+        QuizUI.transform.GetChild(1).GetComponent<Button>().enabled = status;
+        QuizUI.transform.GetChild(2).GetComponent<Button>().enabled = status;
+    }
+
+    private void setResultadoFinal(){
+        int[] result = player.GetComponent<Movement>().getScore();
+        FinalUI.transform.GetChild(1).GetComponent<TMP_Text>().text += " " + result[0];
+        FinalUI.transform.GetChild(2).GetComponent<TMP_Text>().text += " " + result[1];
+        FinalUI.transform.GetChild(3).GetComponent<TMP_Text>().text += " " + result[2];
     }
 }

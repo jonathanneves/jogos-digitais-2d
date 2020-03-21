@@ -26,6 +26,7 @@ public class Console : MonoBehaviour
     private Animator transition;
     private AudioSource audioSource;
     public AudioClip errorFX;
+    public int countReset = 0;
 
 
     void Start(){
@@ -76,6 +77,7 @@ public class Console : MonoBehaviour
         isReseting = true;
         compileButton.enabled = false;
         resetButton.enabled = false;
+        countReset++;
         currentLevel.GetComponent<Animator>().SetBool("MoveLeft", true);
         textInput.GetComponent<Image>().color = actualColor;
         yield return new WaitForSeconds(1f);

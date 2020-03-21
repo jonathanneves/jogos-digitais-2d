@@ -254,8 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b1672fde3bee844a4adcf8e87e0d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quiz: x=3; y=5; y>x?
-  answer: 1
+  quiz: x=3; y=5; y<x?
+  answer: 0
 --- !u!1 &327118198823976236
 GameObject:
   m_ObjectHideFlags: 0

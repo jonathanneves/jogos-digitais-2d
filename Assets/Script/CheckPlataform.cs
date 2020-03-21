@@ -18,6 +18,8 @@ public class CheckPlataform : MonoBehaviour
     private Animator animComputer;
     private bool isOver;
     private AudioSource audioSource;
+    public AudioClip erroFx;
+    public AudioClip successFx;
 
     void Awake(){
         StartCoroutine(getAllReferences());
@@ -84,7 +86,7 @@ public class CheckPlataform : MonoBehaviour
         QuizUI.transform.GetChild(2).GetComponent<Button>().enabled = true;
         QuizUI.SetActive(false);
         animComputer.SetBool("ComputerOn", true);
-        audioSource.Play();
+        audioSource.PlayOneShot(successFx);
         animComputer.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         currentConnected++;
         QuizUI.GetComponent<Image>().color = new Color(1f, 1f, 1f);
@@ -97,6 +99,7 @@ public class CheckPlataform : MonoBehaviour
         QuizUI.GetComponent<Animator>().SetBool("CloseQuiz", true);
         GameObject.Find("GM").GetComponent<Console>().resetLevel();
         currentConnected = 0;
+        audioSource.PlayOneShot(erroFx);
         yield return new WaitForSeconds(waitTime);
         dialogoText.text = "";
         QuizUI.GetComponent<Image>().color = new Color(1f, 1f, 1f);

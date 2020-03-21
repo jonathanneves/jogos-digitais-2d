@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
 
 
     void Start() {
-        constants = GameObject.Find("Loader").GetComponent<Constants>();
+        constants = FindObjectOfType<Constants>();
         animator = GameObject.Find("Transition").GetComponent<Animator>();
     }
 

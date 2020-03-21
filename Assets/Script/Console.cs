@@ -29,7 +29,7 @@ public class Console : MonoBehaviour
 
 
     void Start(){
-        constants = GameObject.Find("Loader").GetComponent<Constants>();
+        constants = FindObjectOfType<Constants>();
         transition = GameObject.Find("Transition").GetComponent<Animator>();
         textInput = GameObject.Find("InputField").GetComponent<InputField>();
         consoleAnim = GameObject.Find("Console").GetComponent<Animation>();
@@ -37,12 +37,6 @@ public class Console : MonoBehaviour
         placeholderInputField.text = constants.placeholderInput;
         currentLevel = Instantiate(newLevel, newLevel.transform.position, newLevel.transform.rotation) as GameObject;
         actualColor = textInput.GetComponent<Image>().color;
-    }
-
-    void Update(){
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            GameObject.Find("Loader").GetComponent<MenuManager>().returnToMenu(SceneManager.GetActiveScene().name); 
-        }
     }
 
     public void compile() {
@@ -103,5 +97,9 @@ public class Console : MonoBehaviour
         transition.SetBool("animationOut", true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void voltarMenu(){
+        FindObjectOfType<MenuManager>().returnToMenu(SceneManager.GetActiveScene().name);
     }
 }

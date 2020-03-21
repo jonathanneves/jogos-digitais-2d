@@ -13,6 +13,7 @@ ScriptsOnlyBuild:
     - Plataform
     - Script.ButtonFX
     - SetTextUI
+    - Timer
     - UIManager
     Unity.2D.PixelPerfect.dll:
     - UnityEngine.U2D.PixelPerfectCamera
@@ -38,10 +39,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -143,6 +142,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13366}
     - Class: 114
       Script: {instanceID: 13376}
+    - Class: 114
+      Script: {instanceID: 27928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -252,6 +253,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13366}
     - Class: 114
       Script: {instanceID: 13376}
+    - Class: 114
+      Script: {instanceID: 27928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -361,6 +364,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13366}
     - Class: 114
       Script: {instanceID: 13376}
+    - Class: 114
+      Script: {instanceID: 27928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -470,6 +475,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13366}
     - Class: 114
       Script: {instanceID: 13376}
+    - Class: 114
+      Script: {instanceID: 27928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -579,6 +586,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13366}
     - Class: 114
       Script: {instanceID: 13376}
+    - Class: 114
+      Script: {instanceID: 27928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -824,7 +833,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: be41eca16f63bcf9aae404849a2b522e
+      Hash: 69d30bbc7ebb09d2de23fabcde9aed31
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CheckPlataform
@@ -1368,6 +1377,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 6e26ad7114d868e1f7379788d7b18f61
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Timer
   platform: 5
   scenePathNames:
   - Assets/Scenes/Menu.unity

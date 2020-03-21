@@ -16,11 +16,14 @@ public class LevelManager : MonoBehaviour
     public Button compile;
     public Button reset;
     public InputField textInput;
+    private Timer timer;
 
     void Start(){
         actualScene = SceneManager.GetActiveScene().name;
         consoleAnim = GameObject.Find("Console").GetComponent<Animator>();
+        timer = FindObjectOfType<Timer>();
         if(actualScene == "Fase 1"){
+            timer.enabled = false;
             dialogue.GetComponent<Animator>().SetBool("OpenDialogue", true);
             StartCoroutine(uiManager.typpingEffect());
         } else {
@@ -42,6 +45,7 @@ public class LevelManager : MonoBehaviour
                 dialogue.GetComponent<Animator>().SetBool("OpenDialogue", false);
                 enableUI(true);
                 uiManager.textDialogue.text = "";
+                timer.enabled = true;
             }
         } else {
             this.enabled = false;

@@ -2202,6 +2202,8 @@ MonoBehaviour:
   waitTime: 0.5
   QuizUI: {fileID: 8006987678844195311}
   FinalUI: {fileID: 8915783675065212908}
+  erroFx: {fileID: 8300000, guid: f0da6f398e2a2214b969d1fdb1115a92, type: 3}
+  successFx: {fileID: 8300000, guid: ab4afccc594abc34f8b8725b1f0edb9d, type: 3}
 --- !u!82 &1389101671789544207
 AudioSource:
   m_ObjectHideFlags: 0

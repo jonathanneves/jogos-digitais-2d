@@ -47,6 +47,8 @@ MonoBehaviour:
   waitTime: 0.5
   QuizUI: {fileID: 8992475828734018432}
   FinalUI: {fileID: 1121621177839353520}
+  erroFx: {fileID: 8300000, guid: f0da6f398e2a2214b969d1fdb1115a92, type: 3}
+  successFx: {fileID: 8300000, guid: ab4afccc594abc34f8b8725b1f0edb9d, type: 3}
 --- !u!82 &5718538468605380211
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3179,7 +3181,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: 0, g: 0, b: 0, a: 0}
   - m_RefCount: 1
-    m_Data: {r: 0.9047906, g: 0.4673116, b: 0.61130184, a: 1}
+    m_Data: {r: 0.95605373, g: 0.57582027, b: 0.6148511, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}

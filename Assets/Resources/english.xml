@@ -27,7 +27,7 @@
 		<dialogue>{i}Hello World!{/i}</dialogue>
 	</page>
 	<page number = "2">
-		<dialogue>I am {color=#ffffff}F1-B0{/color=#ffffff}, a Droid created for eletronics devices repairs.</dialogue>
+		<dialogue>I am {color=#fff}F1-B0{/color=#fff}, a Droid created for eletronics devices repairs.</dialogue>
 	</page>
 
 	<page number = "3">
@@ -43,7 +43,7 @@
 	</page>
 
 	<page number = "6">
-		<dialogue>You may use the console beside of the screen to control me. You just need to type {color=#ffffff}Left, Right, Up, Down.{/color=#ffffff}</dialogue>
+		<dialogue>You may use the console beside of the screen to control me. You just need to type {color=#fff}Left, Right, Up, Down.{/color=#fff}</dialogue>
 	</page> 
 	
 	<page number = "7">
@@ -51,6 +51,6 @@
 	</page> 
 	
 	<page number = "8">
-		<dialogue>Now it is your turn, help me to fixing this device pushing this {color=#46B74F}mini-processor{/color=#46B74F} to the {color=#ff7400}energy plataform{/color=#ff7400}.</dialogue>
+		<dialogue>Now it is your turn, help me to fixing this device pushing this {color=#0f0}mini-processor{/color=#0f0} to the {color=#f50}energy plataform.</dialogue>
 	</page> 
 </chapter_1>

@@ -7,7 +7,6 @@ public class Timer : MonoBehaviour
 {
     float timer = 0;
     public TMP_Text timerTxt;
-
     
     void Update() {
 

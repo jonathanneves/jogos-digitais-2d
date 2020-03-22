@@ -7,6 +7,7 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
+    private Constants constants;
 
     public GameObject dialogue;
     public UIManager uiManager;
@@ -19,6 +20,7 @@ public class LevelManager : MonoBehaviour
     private Timer timer;
 
     void Start(){
+        constants = FindObjectOfType<Constants>();
         actualScene = SceneManager.GetActiveScene().name;
         consoleAnim = GameObject.Find("Console").GetComponent<Animator>();
         timer = FindObjectOfType<Timer>();
@@ -39,6 +41,14 @@ public class LevelManager : MonoBehaviour
                 if(uiManager.nextDialogue == 5){
                     consoleAnim.SetBool("AbrirConsole", true);
                     enableUI(false);
+                }
+                if(uiManager.nextDialogue == 6){
+                    textInput.text = constants.inputRight + "\n" + constants.inputDown + "\n" + constants.inputUp + "\n" + constants.inputLeft;
+                    compile.GetComponent<Image>().color = new Color(0f, 128f, 0f);
+                }
+                if(uiManager.nextDialogue == 7){
+                    textInput.text = "";
+                    compile.GetComponent<Image>().color = new Color(255f, 255f, 255f);
                 }
             }
             if (Input.anyKey && !uiManager.estaDigitando && uiManager.endDialogue) {

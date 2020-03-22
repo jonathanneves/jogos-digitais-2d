@@ -27,7 +27,7 @@
 		<dialogue>{i}Olá mundo!{/i}</dialogue>
 	</page>
 	<page number = "2">
-		<dialogue>Eu sou {color=#ffffff}F1-B0{/color=#ffffff}, um Droide criado para concerto de dispositivos eletrônicos.</dialogue>
+		<dialogue>Eu sou {color=#fff}F1-B0{/color=#fff}, um Droide criado para concerto de dispositivos eletrônicos.</dialogue>
 	</page>
 
 	<page number = "3">
@@ -43,14 +43,14 @@
 	</page>
 
 	<page number = "6">
-		<dialogue>Você pode usar o console ao lado para me controlar. Basta digitar os comandos {color=#ffffff}Esquerda, Direita, Cima e Baixo.{/color=#ffffff}</dialogue>
+		<dialogue>Você pode usar o console ao lado para me controlar. Basta digitar os comandos {color=#fff}Esquerda, Direita, Cima e Baixo.{/color=#fff}</dialogue>
 	</page> 
 	
 	<page number = "7">
-		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em linhas, um em baixo do outro. Depois é só {b}compilar{/b}.</dialogue>
+		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em {i}linhas{/i}, um em baixo do outro. Depois disso, aperte em {color=#0f0}compilar{/color=#0f0}.</dialogue>
 	</page> 
 	
 	<page number = "8">
-		<dialogue>Agora é sua vez, me ajude a concertar este dispositivo levando este {color=#46B74F}mini-processador{/color=#46B74F} até a {color=#ff7400}plataforma de energia{/color=#ff7400}</dialogue>
+		<dialogue>Agora é sua vez, me ajude a concertar este dispositivo levando este {color=#0f0}mini-processador{/color=#0f0} até a {color=#f50}plataforma de energia.</dialogue>
 	</page> 
 </chapter_1>

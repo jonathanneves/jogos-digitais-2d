@@ -19,6 +19,8 @@ public class Console : MonoBehaviour
     public GameObject newLevel;
     private GameObject currentLevel;
 
+    [Space(5)]
+    [Header("UI")]
     public Button compileButton;
     public Button resetButton;
     public Text placeholderInputField;
@@ -26,7 +28,7 @@ public class Console : MonoBehaviour
     private Animator transition;
     private AudioSource audioSource;
     public AudioClip errorFX;
-    public int countReset = 0;
+    [HideInInspector] public int countReset = 0;
 
 
     void Start(){

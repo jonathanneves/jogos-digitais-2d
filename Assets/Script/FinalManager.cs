@@ -8,7 +8,7 @@ public class FinalManager : MonoBehaviour
 {
     private Constants constants;
     public TMP_Text theEndText;
-    private bool estaDigitando;
+    private bool estaDigitando = true;
     private AudioSource audioSource;
     public AudioClip dialogueFX;
     public float delayTypping = 0.05f;
@@ -20,16 +20,16 @@ public class FinalManager : MonoBehaviour
     }
 
     void Update(){
-        if (Input.anyKey && !estaDigitando){
-            Debug.Log("Saiu do jogo!");
-            constants.currentScene = "Fase 1";
-            SceneManager.LoadScene("Menu");
+        if(!estaDigitando){
+            if (Input.anyKey){
+                constants.currentScene = "Fase 1";
+                SceneManager.LoadScene("Menu");
+            }
         }
     }
 
     private IEnumerator typpingEffect(string actualText) {
 
-        Debug.Log(actualText);
         theEndText.text = actualText;
 
         int totalVisibleCharacters = actualText.Length;
@@ -38,6 +38,9 @@ public class FinalManager : MonoBehaviour
         while (counter <= totalVisibleCharacters) {
             int visibleCount = counter % (totalVisibleCharacters + 1);
             theEndText.maxVisibleCharacters = visibleCount;
+            if (counter < totalVisibleCharacters && actualText[counter] == '.') {
+                delayTypping = delayTypping * 3;
+            }
             counter++;
             audioSource.PlayOneShot(dialogueFX);
             yield return new WaitForSeconds(delayTypping);

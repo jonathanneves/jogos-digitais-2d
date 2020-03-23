@@ -71,7 +71,7 @@ public class CheckPlataform : MonoBehaviour
     IEnumerator openQuizUI(){
         QuizUI.SetActive(true);
         yield return new WaitForSeconds(waitTime);
-        Time.timeScale = 0f;
+        player.stopPlayer = true;
         enableButton(true);
         dialogoText.text = plataforms[currentConnected].GetComponent<Plataform>().quiz;
     }
@@ -79,7 +79,7 @@ public class CheckPlataform : MonoBehaviour
     IEnumerator closeQuizUI(){
         enableButton(false);
         QuizUI.GetComponent<Animator>().SetBool("CloseQuiz", true);
-        Time.timeScale = 1f;
+        player.stopPlayer = false;
         yield return new WaitForSeconds(waitTime);
         isWaiting = false;
         dialogoText.text = "";
@@ -93,7 +93,7 @@ public class CheckPlataform : MonoBehaviour
 
     IEnumerator resetingLevel(){
         enableButton(false);
-        Time.timeScale = 1f;
+        player.stopPlayer = false;
         QuizUI.GetComponent<Animator>().SetBool("CloseQuiz", true);
         GameObject.Find("GM").GetComponent<Console>().resetLevel();
         currentConnected = 0;
@@ -107,6 +107,7 @@ public class CheckPlataform : MonoBehaviour
     IEnumerator openFinalUI(){
         FindObjectOfType<Timer>().enabled = false;
         FinalUI.SetActive(true);
+        player.stopPlayer = true;
         GameObject.Find("GM").GetComponent<Console>().disableScene();
         setResultadoFinal();      
         yield return new WaitForSeconds(1f);

@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Typping Effect Coroutine")]
     public float delayTypping = 0.05f;
+    private float speed = 1;
 
     void Start(){
         audioSource = this.gameObject.GetComponent<AudioSource>();
@@ -25,8 +26,12 @@ public class UIManager : MonoBehaviour
     public IEnumerator typpingEffect(){
 
         estaDigitando = true;
-        if(nextDialogue == 0)
+        if(nextDialogue == 0){
             yield return new WaitForSeconds(1.5f);
+            speed = 3;
+        } else {
+            speed = 1;
+        }
 
         string actualText = loadXml.data[nextDialogue].dialogueText;
         textDialogue.text = actualText;
@@ -39,7 +44,7 @@ public class UIManager : MonoBehaviour
             textDialogue.maxVisibleCharacters = visibleCount;
             counter++;
             audioSource.PlayOneShot(dialogueFX);
-            yield return new WaitForSeconds(delayTypping);
+            yield return new WaitForSeconds(delayTypping * speed);
         }
         nextDialogue++;
         if (nextDialogue == 7)

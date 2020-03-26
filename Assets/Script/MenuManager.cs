@@ -23,7 +23,7 @@ public class MenuManager : MonoBehaviour
     private IEnumerator LoadNewSceneAfterTransition(){
         animator.SetBool("animationOut", true);
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(constants.currentScene);
+        SceneManager.LoadScene(1);//(constants.currentScene);
     }
 
     public void LeaveGame(){

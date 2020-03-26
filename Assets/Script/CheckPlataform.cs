@@ -71,15 +71,15 @@ public class CheckPlataform : MonoBehaviour
     IEnumerator openQuizUI(){
         QuizUI.SetActive(true);
         yield return new WaitForSeconds(waitTime);
+        dialogoText.text = plataforms[currentConnected].GetComponent<Plataform>().quiz;
         player.stopPlayer = true;
         enableButton(true);
-        dialogoText.text = plataforms[currentConnected].GetComponent<Plataform>().quiz;
     }
 
     IEnumerator closeQuizUI(){
         enableButton(false);
-        QuizUI.GetComponent<Animator>().SetBool("CloseQuiz", true);
         player.stopPlayer = false;
+        QuizUI.GetComponent<Animator>().SetBool("CloseQuiz", true);
         yield return new WaitForSeconds(waitTime);
         isWaiting = false;
         dialogoText.text = "";
@@ -95,10 +95,11 @@ public class CheckPlataform : MonoBehaviour
         enableButton(false);
         player.stopPlayer = false;
         QuizUI.GetComponent<Animator>().SetBool("CloseQuiz", true);
-        GameObject.Find("GM").GetComponent<Console>().resetLevel();
-        currentConnected = 0;
         audioSource.PlayOneShot(erroFx);
+        currentConnected = 0;
         yield return new WaitForSeconds(waitTime);
+        GameObject.Find("GM").GetComponent<Console>().resetLevel();
+        QuizUI.SetActive(false);
         dialogoText.text = "";
         QuizUI.GetComponent<Image>().color = new Color(1f, 1f, 1f);
     }

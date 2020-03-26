@@ -256,6 +256,7 @@ MonoBehaviour:
   waitTime: 0.6
   moveSpeed: 5
   canMove: 0
+  stopPlayer: 0
   gameOver: 0
 --- !u!61 &3139390351859999404
 BoxCollider2D:
@@ -2762,7 +2763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681fe47111883f4499cf9926554fc02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 0.5
+  waitTime: 0.4
   QuizUI: {fileID: 7492007766959219294}
   FinalUI: {fileID: 7837174620835359095}
   erroFx: {fileID: 8300000, guid: f0da6f398e2a2214b969d1fdb1115a92, type: 3}

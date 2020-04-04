@@ -13,14 +13,18 @@ public class Movement : MonoBehaviour
     private Vector2 currentPos;
     private Rigidbody2D rb;
     private Vector2 movement;
-    public bool canMove = false;
-    public bool stopPlayer = false;
-    private Animator animator;
     private Color actualColor;
+    private Animator animator;
+
+    [HideInInspector] public bool canMove = false;
+    [HideInInspector] public bool stopPlayer = false;
     [HideInInspector] public bool gameOver = false;
 
     private int wrongCommands = 0;
     private int rightCommands = 0;
+    private Color[] cores = {Color.magenta, Color.yellow, Color.red, Color.green, Color.cyan};
+    private int indexColor = 0;
+    private SpriteRenderer spritePlayer;
 
     void Start()
     {
@@ -28,6 +32,7 @@ public class Movement : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         animator = this.GetComponent<Animator>();
         console = FindObjectOfType<Console>();
+        spritePlayer = this.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -43,6 +48,12 @@ public class Movement : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, movement, moveSpeed * Time.deltaTime);
             }
         } 
+        if(Input.GetKeyDown(KeyCode.F5)){
+            indexColor++;
+            if (indexColor == cores.Length)
+                indexColor = 0;
+            spritePlayer.color = cores[indexColor];
+        }
     }
     
     private IEnumerator startMovement(){

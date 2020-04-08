@@ -20,6 +20,8 @@ public class CheckPlataform : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip erroFx;
     public AudioClip successFx;
+    public ParticleSystem particleComputerOn;
+    private Transform tComputer;
 
     void Awake(){
         StartCoroutine(getAllReferences());
@@ -43,6 +45,7 @@ public class CheckPlataform : MonoBehaviour
     public void increasePlataformCount(GameObject computer){
         isWaiting = true;
         animComputer = computer.GetComponent<Animator>();
+        tComputer = computer.transform;
         StartCoroutine(openQuizUI());
     }
 
@@ -58,10 +61,12 @@ public class CheckPlataform : MonoBehaviour
     }
 
     public void checkResult(bool answer) {
+        //Resposta Correta
         if (plataforms[currentConnected].GetComponent<Plataform>().answer == answer) {
             QuizUI.GetComponent<Image>().color = new Color(0.1f, 0.8f, 0.1f);
             StartCoroutine(closeQuizUI());
         }
+        //Resposta Errada
         else {
             QuizUI.GetComponent<Image>().color = new Color(0.8f, 0.1f, 0.1f);
             StartCoroutine(resetingLevel());
@@ -85,6 +90,8 @@ public class CheckPlataform : MonoBehaviour
         dialogoText.text = "";
         QuizUI.SetActive(false);
         animComputer.SetBool("ComputerOn", true);
+        ParticleSystem particleInstance = Instantiate(particleComputerOn, tComputer);
+        Destroy(particleInstance, 0.5f);
         audioSource.PlayOneShot(successFx);
         animComputer.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         currentConnected++;

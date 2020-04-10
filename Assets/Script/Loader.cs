@@ -16,9 +16,20 @@ public class Loader : MonoBehaviour {
     int iteration = 1, pageNum = 1;
     string dialogueText;
     bool finishedLoading = false;
+    private string actualLanguage = "portuguese";
+    private static Loader instance = null;
+    
+    void Awake(){
+        if (instance == null){
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else{
+            DestroyImmediate(gameObject);
+        }
+    }
 
     void Start(){
-        currentLanguage("portuguese");
+        currentLanguage(actualLanguage);
     }
 
     void LoadXML(string currentLanguage) {
@@ -56,8 +67,8 @@ public class Loader : MonoBehaviour {
     }
 
     public void currentLanguage(string language){
-        DontDestroyOnLoad(gameObject); //Allows Loader to carry over into new scene 
-        LoadXML(language); //Loads XML File. 
+        actualLanguage = language;
+        LoadXML(actualLanguage); //Loads XML File. 
         StartCoroutine("AssignData"); //Starts assigning XML data to data List. 
     }
     

@@ -104,6 +104,7 @@ public class Console : MonoBehaviour
     }
 
     public void voltarMenu(){
-        FindObjectOfType<MenuManager>().returnToMenu(SceneManager.GetActiveScene().name);
+        constants.currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("Menu");
     }
 }

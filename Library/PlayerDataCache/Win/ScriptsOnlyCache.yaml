@@ -39,8 +39,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1129,7 +1131,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 0eb5679f3ed18f6c6e08e45c84955e6f
+      Hash: f725b7ac968066a19dc7cb44b463b77a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Constants
@@ -1189,7 +1191,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 331d4e43d9b6327bb581951d48339039
+      Hash: 554e9a6fb7caaaa11f5f4b989a986beb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager

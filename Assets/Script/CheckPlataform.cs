@@ -85,15 +85,14 @@ public class CheckPlataform : MonoBehaviour
         enableButton(false);
         player.stopPlayer = false;
         QuizUI.GetComponent<Animator>().SetBool("CloseQuiz", true);
+        animComputer.SetBool("ComputerOn", true);
         yield return new WaitForSeconds(waitTime);
+        ParticleSystem particleInstance = Instantiate(particleComputerOn, tComputer);
         isWaiting = false;
         dialogoText.text = "";
         QuizUI.SetActive(false);
-        animComputer.SetBool("ComputerOn", true);
-        ParticleSystem particleInstance = Instantiate(particleComputerOn, tComputer);
         Destroy(particleInstance, 0.5f);
         audioSource.PlayOneShot(successFx);
-        animComputer.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         currentConnected++;
         QuizUI.GetComponent<Image>().color = new Color(1f, 1f, 1f);
     }

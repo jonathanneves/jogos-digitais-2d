@@ -10,8 +10,9 @@ public class Plataform : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.CompareTag("Computer")){
             GameObject parent = col.transform.parent.gameObject;
+            parent.GetComponent<Rigidbody2D>().isKinematic = true;
+            parent.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             parent.transform.position = this.transform.position;
-            parent.GetComponent<Rigidbody2D>().isKinematic = false;
             GameObject.Find("CheckLevel").GetComponent<CheckPlataform>().increasePlataformCount(parent);
         }
     }

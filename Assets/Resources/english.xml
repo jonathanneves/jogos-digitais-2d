@@ -47,7 +47,7 @@
 	</page> 
 	
 	<page number = "7">
-		<dialogue>For that, It is necessary to send all the commands all at once separeted into {i}lines{/i}, one under the other. After that, click in {color=#0f0}compile{/color=#0f0}.</dialogue>
+		<dialogue>For that, It is necessary to send all the commands all at once separeted into {b}lines{/b}, one under the other. After that, click in {color=#0f0}compile >{/color=#0f0}.</dialogue>
 	</page> 
 	
 	<page number = "8">

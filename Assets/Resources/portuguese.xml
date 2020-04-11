@@ -21,7 +21,7 @@
 		<finalTitleUI>Compilado Com Sucesso!</finalTitleUI>
 		<buttonNext>Próxima Fase</buttonNext>
 		<resetCount>Vezes Resetados:</resetCount>
-		<theEndText>Agora eu já aprendi o suficiente e posso agir por conta própria. Obrigado por Jogar, Humano!</theEndText>
+		<theEndText>Agora eu já aprendi o suficiente e posso agir por conta própria. Obrigado por jogar, Humano!</theEndText>
 	</mappingUI> 
 	<page number = "1">
 		<dialogue>{i}Olá mundo!{/i}</dialogue>
@@ -43,11 +43,11 @@
 	</page>
 
 	<page number = "6">
-		<dialogue>Você pode usar o console ao lado para me controlar. Basta digitar os comandos {color=#fff}Esquerda, Direita, Cima e Baixo.{/color=#fff}</dialogue>
+		<dialogue>Você pode usar o console ao lado para me controlar. Basta digitar os comandos {color=#fff}Esquerda, Direita, Cima e Baixo{/color=#fff}.</dialogue>
 	</page> 
 	
 	<page number = "7">
-		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em {i}linhas{/i}, um em baixo do outro. Depois disso, aperte em {color=#0f0}compilar{/color=#0f0}.</dialogue>
+		<dialogue>Para isso é necessário enviar todos os comandos de uma só vez separados em {b}linhas{/b}, um em baixo do outro. Depois disso, aperte em {color=#0f0}compilar >{/color=#0f0}.</dialogue>
 	</page> 
 	
 	<page number = "8">

@@ -85,6 +85,7 @@ public class Movement : MonoBehaviour
 
         currentPos = new Vector2(Mathf.Round(this.transform.position.x), Mathf.Round(this.transform.position.y));
         string currentCommand = console.commands[index].ToLower();
+        currentCommand = currentCommand.Trim();
 
         if (currentCommand == constants.inputLeft) {
             movement.x = -1f;

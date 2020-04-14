@@ -104,6 +104,7 @@ public class Console : MonoBehaviour
     }
 
     public void voltarMenu(){
+        FindObjectOfType<MusicBackground>().StopMusic();
         constants.currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("Menu");
     }

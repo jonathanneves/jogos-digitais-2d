@@ -14,6 +14,7 @@ public class FinalManager : MonoBehaviour
     public float delayTypping = 0.05f;
 
     void Start() {
+        FindObjectOfType<MusicBackground>().StopMusic();
         audioSource = this.gameObject.GetComponent<AudioSource>();
         constants = GameObject.Find("Loader").GetComponent<Constants>();
         StartCoroutine(typpingEffect(constants.theEndText));

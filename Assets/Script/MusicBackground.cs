@@ -15,4 +15,8 @@ public class MusicBackground : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
+
+    public void StopMusic() {
+        Destroy(this.gameObject);
+    }
 }

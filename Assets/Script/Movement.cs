@@ -59,7 +59,7 @@ public class Movement : MonoBehaviour
         while (index != console.commands.Length) {
 
             if(!stopPlayer){
-                movement = newMovement(index);     
+                movement = newMovement(index);
 
                 canMove = true;
                 yield return new WaitForSeconds(waitTime);

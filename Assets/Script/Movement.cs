@@ -14,7 +14,6 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     private Color actualColor;
-    private Animator animator;
 
     [HideInInspector] public bool canMove = false;
     [HideInInspector] public bool stopPlayer = false;
@@ -30,7 +29,6 @@ public class Movement : MonoBehaviour
     {
         constants = FindObjectOfType<Constants>();
         rb = this.GetComponent<Rigidbody2D>();
-        animator = this.GetComponent<Animator>();
         console = FindObjectOfType<Console>();
         spritePlayer = this.GetComponent<SpriteRenderer>();
     }
@@ -63,10 +61,6 @@ public class Movement : MonoBehaviour
             if(!stopPlayer){
                 movement = newMovement(index);     
 
-                animator.SetFloat("Horizontal", movement.x);
-                animator.SetFloat("Vertical", movement.y);
-                animator.SetFloat("speed", movement.magnitude);
-
                 canMove = true;
                 yield return new WaitForSeconds(waitTime);
                 canMove = false;
@@ -88,9 +82,11 @@ public class Movement : MonoBehaviour
         currentCommand = currentCommand.Trim();
 
         if (currentCommand == constants.inputLeft) {
+            spritePlayer.flipX = true;
             movement.x = -1f;
         }
         else if (currentCommand == constants.inputRight) {
+            spritePlayer.flipX = false;
             movement.x = 1f;
         }
         else if (currentCommand == constants.inputUp) {

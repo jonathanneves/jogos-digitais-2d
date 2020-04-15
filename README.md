@@ -3,7 +3,7 @@ Jogo feito para Disciplina Jogos Digitais (Fix it F1-BO)
 
 > Inicie o projeto na Cena Principal "Menu" para evitar erros. Pasta Scenes > Menu
 
-> Possíveis problemas de compatibilidade de unity. É recomendado deletar todas as pastas exceto "Assets e ProjectSettings" para que o unity baite todas as dependências novamente.
+> Possíveis problemas de compatibilidade de unity. É recomendado deletar todas as pastas exceto "Assets e ProjectSettings" para que o unity baixe todas as dependências novamente.
 
 > Pasta do projeto com os scripts estão na Pasta Projeto > Fix it Fibo
 

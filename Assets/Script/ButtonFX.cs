@@ -5,9 +5,13 @@ using UnityEngine;
 namespace Script {
     public class ButtonFX : MonoBehaviour
     {
-        public AudioSource myFx;
+        private AudioSource myFx;
         public AudioClip hoverFx;
         public AudioClip clickFx;
+
+        void Awake(){
+            myFx = this.GetComponent<AudioSource>();
+        }
 
         public void HoverSound(){
             myFx.PlayOneShot(hoverFx);
